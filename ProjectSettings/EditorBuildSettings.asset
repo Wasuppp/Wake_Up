@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/Cubo_Labirinto.unity
+    guid: 29d8ca168bdff1a4eaa9f378bfbb38bb
+  - enabled: 1
+    path: Assets/Scenes/MiniJogos.unity
+    guid: 17415b3207a4a0549903a91e331b7fde
+  - enabled: 1
+    path: Assets/Scenes/Passagens.unity
+    guid: d9440bf0f5bb1474e89a702821b2d536
+  - enabled: 1
+    path: Assets/Scenes/Sala_Principal.unity
+    guid: f0e0653580c4231418d7a388f92ad355
   m_configObjects: {}

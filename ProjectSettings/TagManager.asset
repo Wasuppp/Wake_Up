@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Trigger_Portal
+  - TriggerLab
+  - TriggerPass
+  - TriggerMin
   layers:
   - Default
   - TransparentFX
