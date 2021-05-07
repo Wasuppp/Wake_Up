@@ -7,6 +7,10 @@ TagManager:
   - TriggerLab
   - TriggerPass
   - TriggerMin
+  - Segredo
+  - TriggerRampa1
+  - TriggerRampa2
+  - TriggerRampa3
   layers:
   - Default
   - TransparentFX
