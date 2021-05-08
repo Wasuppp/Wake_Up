@@ -10,17 +10,20 @@ public class Jogador : MonoBehaviour
 
     [SerializeField] float TempoEsperaTransporte = 2f;
 
-    private bool DentroPortalLab = false; // O jogador está dentro do portal
-    private bool DentroPortalPass = false;
-    private bool DentroPortalMin = false;
+    bool DentroPortalLab = false; // O jogador está dentro do portal
+    bool BloquearNivelLabirinto = false;
+
+    bool DentroPortalPass = false;
+    bool DentroPortalMin = false;
 
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "TriggerLab")
+        if (other.tag == "TriggerLab" && BloquearNivelLabirinto == false)
         {
             DentroPortalLab = true;
             Debug.Log("Portal_Labirinto");
+            BloquearNivelLabirinto = true;
         }
 
         if (other.tag == "TriggerPass")
