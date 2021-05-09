@@ -28,13 +28,13 @@ public class Jogador : MonoBehaviour
 
         if (other.tag == "TriggerPass")
         {
-            DentroPortalLab = true;
+            DentroPortalPass = true;
             Debug.Log("Portal_Passagens");
         }
 
         if (other.tag == "TriggerMin")
         {
-            DentroPortalLab = true;
+            DentroPortalMin = true;
             Debug.Log("Portal_MiniJogos");
         }
 
