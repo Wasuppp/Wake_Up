@@ -13,12 +13,36 @@ public class Jogador2 : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.CompareTag("TriggerRampa1"))&& (Trigger1acaba==false))
+       /* if ((other.gameObject.CompareTag("TriggerRampa1")) && (Trigger1acaba == false))
         {
             Debug.Log("Cuboroda");
             gameObject.GetComponent<AudioSource>().Play();
-            Trigger1acaba = true;         
-        }    
+            Trigger1acaba = true;
+        } */
+
+        if (other.CompareTag("objetocolectavel1"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
+        else if (other.CompareTag("Pista1"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
     }
-    
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("objetocolectavel1"))
+        {
+
+            other.GetComponent<AudioSource>().Stop();
+        }
+
+        else if (other.CompareTag("Pista1"))
+        {
+
+            other.GetComponent<AudioSource>().Stop();
+        }
+    }
 }

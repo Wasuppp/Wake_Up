@@ -14,6 +14,8 @@ TagManager:
   - Porta1
   - Porta2
   - Porta3
+  - objetocolectavel1
+  - Pista1
   layers:
   - Default
   - TransparentFX
