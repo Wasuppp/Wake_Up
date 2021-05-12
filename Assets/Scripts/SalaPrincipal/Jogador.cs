@@ -11,7 +11,7 @@ public class Jogador : MonoBehaviour
 
     [SerializeField] float TempoEsperaTransporte = 2f;
 
-    [SerializeField]  Image blackScreen;
+    [SerializeField] Image blackScreen;
     [SerializeField] float tempoTransicaoPreto;
 
     bool DentroPortalLab = false; // O jogador está dentro do portal
@@ -26,7 +26,7 @@ public class Jogador : MonoBehaviour
     }
 
 
-        void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.tag == "TriggerLab" && BloquearNivelLabirinto == false)
         {
@@ -57,7 +57,7 @@ public class Jogador : MonoBehaviour
         {
             Tempo += Time.deltaTime;
 
-            if(Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
+            if (Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
             {
                 TransporteLabirinto();
             }
@@ -114,5 +114,56 @@ public class Jogador : MonoBehaviour
         blackScreen.canvasRenderer.SetAlpha(1.0f);
         blackScreen.CrossFadeAlpha(0.0f, tempoTransicaoPreto, false);
     }
+
+
+    //Efeitos Sonoros
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Porta1"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
+
+        if (other.CompareTag("Porta2"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
+        if (other.CompareTag("Porta3"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
+
+        
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Porta1"))
+        {
+
+            other.GetComponent<AudioSource>().Stop();
+        }
+
+        if (other.CompareTag("Porta2"))
+        {
+
+            other.GetComponent<AudioSource>().Stop();
+        }
+
+        if (other.CompareTag("Porta3"))
+        {
+
+            other.GetComponent<AudioSource>().Stop();
+        }
+
+        
+    }
+
+  
+
+
 }
 

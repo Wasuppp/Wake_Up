@@ -27,7 +27,7 @@ public class Rotacao1 : MonoBehaviour
         {
 
             Cubo.transform.RotateAround(ObjetoRotacao.transform.position, new Vector3(0, 0, 1), velocidadeRot * Time.deltaTime);
-            Debug.Log("" + Cubo.transform.eulerAngles.z);
+            
 
             if (Cubo.transform.eulerAngles.z <= 270f)
             {

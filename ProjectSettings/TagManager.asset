@@ -11,6 +11,9 @@ TagManager:
   - TriggerRampa1
   - TriggerRampa2
   - TriggerRampa3
+  - Porta1
+  - Porta2
+  - Porta3
   layers:
   - Default
   - TransparentFX
