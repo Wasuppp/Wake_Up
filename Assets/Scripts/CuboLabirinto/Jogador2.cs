@@ -5,20 +5,20 @@ using UnityEngine;
 public class Jogador2 : MonoBehaviour
 {
 
-    [SerializeField] AudioSource cuborodar;
+   // [SerializeField] AudioSource cuborodar;
 
-    bool Trigger1acaba = false;
+   // bool Trigger1acaba = false;
 
 
     // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
-       /* if ((other.gameObject.CompareTag("TriggerRampa1")) && (Trigger1acaba == false))
-        {
-            Debug.Log("Cuboroda");
-            gameObject.GetComponent<AudioSource>().Play();
-            Trigger1acaba = true;
-        } */
+        /* if ((other.gameObject.CompareTag("TriggerRampa1")) && (Trigger1acaba == false))
+         {
+             Debug.Log("Cuboroda");
+             gameObject.GetComponent<AudioSource>().Play();
+             Trigger1acaba = true;
+         } */
 
         if (other.CompareTag("objetocolectavel1"))
         {
@@ -26,6 +26,11 @@ public class Jogador2 : MonoBehaviour
             other.GetComponent<AudioSource>().Play();
         }
         else if (other.CompareTag("Pista1"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
+        if (other.CompareTag("rotacao"))
         {
 
             other.GetComponent<AudioSource>().Play();
@@ -40,6 +45,11 @@ public class Jogador2 : MonoBehaviour
         }
 
         else if (other.CompareTag("Pista1"))
+        {
+
+            other.GetComponent<AudioSource>().Stop();
+        }
+        if (other.CompareTag("rotacao"))
         {
 
             other.GetComponent<AudioSource>().Stop();
