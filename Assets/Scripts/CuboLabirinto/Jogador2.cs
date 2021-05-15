@@ -5,20 +5,19 @@ using UnityEngine;
 public class Jogador2 : MonoBehaviour
 {
 
-   // [SerializeField] AudioSource cuborodar;
+    // [SerializeField] AudioSource cuborodar;
 
-   // bool Trigger1acaba = false;
+    // bool Trigger1acaba = false;
 
+
+
+    bool Musica1Acaba = false;
+    bool Musica2Acaba = false;
+    bool Musica3Acaba = false;
 
     // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
-        /* if ((other.gameObject.CompareTag("TriggerRampa1")) && (Trigger1acaba == false))
-         {
-             Debug.Log("Cuboroda");
-             gameObject.GetComponent<AudioSource>().Play();
-             Trigger1acaba = true;
-         } */
 
         if (other.CompareTag("objetocolectavel1"))
         {
@@ -30,9 +29,19 @@ public class Jogador2 : MonoBehaviour
 
             other.GetComponent<AudioSource>().Play();
         }
-        if (other.CompareTag("rotacao"))
+        if (other.CompareTag("Rotacao1") && Musica1Acaba==false)
         {
-
+            Musica1Acaba = true;
+            other.GetComponent<AudioSource>().Play();
+        }
+        else if (other.CompareTag("Rotacao2") && Musica2Acaba==false)
+        {
+            Musica2Acaba = true;
+            other.GetComponent<AudioSource>().Play();
+        }
+        else if (other.CompareTag("Rotacao3") && Musica3Acaba==false)
+        {
+            Musica3Acaba = true;
             other.GetComponent<AudioSource>().Play();
         }
     }
@@ -49,7 +58,7 @@ public class Jogador2 : MonoBehaviour
 
             other.GetComponent<AudioSource>().Stop();
         }
-        if (other.CompareTag("rotacao"))
+        if (other.CompareTag("Rotacao1")|| other.CompareTag("Rotacao2")|| other.CompareTag("Rotacao3"))
         {
 
             other.GetComponent<AudioSource>().Stop();

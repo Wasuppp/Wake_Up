@@ -17,6 +17,9 @@ TagManager:
   - objetocolectavel1
   - Pista1
   - rotacao
+  - Rotacao1
+  - Rotacao2
+  - Rotacao3
   layers:
   - Default
   - TransparentFX
