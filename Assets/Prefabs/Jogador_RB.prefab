@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 4884471335639392149}
   m_Layer: 0
   m_Name: Jogador_RB
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,8 +328,8 @@ MonoBehaviour:
     smoothTime: 18
     lockCursor: 1
   advancedSettings:
-    groundCheckDistance: 0.01
-    stickToGroundHelperDistance: 0.06
+    groundCheckDistance: 0.1
+    stickToGroundHelperDistance: 0.6
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
