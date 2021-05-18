@@ -27,7 +27,7 @@ public class Rotacao_Ilha : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         RaycastHit hit;
@@ -41,7 +41,7 @@ public class Rotacao_Ilha : MonoBehaviour
         }
 
 
-        if (EmRotacao == true && RotacaoPositiva ==true)
+        if (EmRotacao == true && RotacaoPositiva ==true) //rotacao no sentido dos ponteiros do relógio
         {
             Ilha.transform.RotateAround(ObjetoRotacao.transform.position, new Vector3(0, 1, 0), velocidadeRot * Time.deltaTime);
 
@@ -51,7 +51,7 @@ public class Rotacao_Ilha : MonoBehaviour
                 contadorPositivo += 90f;
             }
         }
-        else if (EmRotacao == true && RotacaoPositiva == false)
+        else if (EmRotacao == true && RotacaoPositiva == false) //rotacao contra o sentido dos ponteiros do relógio
         {
             Ilha.transform.RotateAround(ObjetoRotacao.transform.position, new Vector3(0, 1, 0), velocidadeRot * Time.deltaTime);
             Debug.Log(Ilha.transform.eulerAngles.y);
