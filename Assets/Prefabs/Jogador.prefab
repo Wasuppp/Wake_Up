@@ -70,7 +70,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
+  m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -191,6 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TempoEsperaTransporte: 1
+  blackScreen: {fileID: 0}
+  tempoTransicaoPreto: 2
 --- !u!114 &8350646145985632794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,10 +207,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsWalking: 0
   m_WalkSpeed: 5
-  m_RunSpeed: 10
+  m_RunSpeed: 12
   m_RunstepLenghten: 0.3
-  m_JumpSpeed: 8
-  m_StickToGroundForce: 10
+  m_JumpSpeed: 10
+  m_StickToGroundForce: 8
   m_GravityMultiplier: 2
   m_MouseLook:
     XSensitivity: 2
@@ -252,8 +254,8 @@ MonoBehaviour:
       m_RotationOrder: 4
   m_UseHeadBob: 1
   m_HeadBob:
-    HorizontalBobRange: 0.1
-    VerticalBobRange: 0.1
+    HorizontalBobRange: 0.05
+    VerticalBobRange: 0.05
     Bobcurve:
       serializedVersion: 2
       m_Curve:

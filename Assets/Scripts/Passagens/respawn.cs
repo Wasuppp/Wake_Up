@@ -32,12 +32,6 @@ public class respawn : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        CheckPoint1.transform.position = CheckPoint1.transform.position;
-
-        CheckPoint2.transform.position = CheckPoint2.transform.position;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
