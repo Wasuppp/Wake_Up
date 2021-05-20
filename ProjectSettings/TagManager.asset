@@ -20,6 +20,10 @@ TagManager:
   - Rotacao1
   - Rotacao2
   - Rotacao3
+  - CheckPoint1
+  - CheckPoint2
+  - CheckPoint3
+  - CheckPoint4
   layers:
   - Default
   - TransparentFX
