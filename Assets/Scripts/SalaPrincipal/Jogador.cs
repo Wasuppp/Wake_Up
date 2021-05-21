@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Jogador : MonoBehaviour
 {
+    [SerializeField] Progresso Progresso;
 
     private float Tempo = 0f;
 
@@ -18,9 +19,12 @@ public class Jogador : MonoBehaviour
     bool BloquearNivelLabirinto = false;
 
     bool DentroPortalPass = false;
-    bool DentroPortalMin = false;
+    bool BloquearNivelPassagens = false;
 
-    private void Start()
+    bool DentroPortalMin = false;
+    bool BloquearNivelMinijogos = false;
+
+    private void Awake()
     {
         FadeFromBlack();
     }
@@ -31,21 +35,26 @@ public class Jogador : MonoBehaviour
         if (other.tag == "TriggerLab" && BloquearNivelLabirinto == false)
         {
             DentroPortalLab = true;
-            Debug.Log("Portal_Labirinto");
+            Progresso.InstanciaUrso();
             BloquearNivelLabirinto = true;
             FadeToBlack();
-        }
 
-        if (other.tag == "TriggerPass")
+        }
+        if (other.tag == "TriggerPass" && BloquearNivelPassagens == false)
         {
             DentroPortalPass = true;
-            Debug.Log("Portal_Passagens");
-        }
+            Progresso.InstanciaPapeis();
+            BloquearNivelPassagens = true;
+            FadeToBlack();
 
-        if (other.tag == "TriggerMin")
+        }
+        
+        if (other.tag == "TriggerMin" && BloquearNivelMinijogos == false)
         {
             DentroPortalMin = true;
-            Debug.Log("Portal_MiniJogos");
+            Progresso.InstanciaTelemovel();
+            BloquearNivelMinijogos = true;
+            FadeToBlack();
         }
 
     }
@@ -79,7 +88,7 @@ public class Jogador : MonoBehaviour
 
             if (Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
             {
-                TransportePassagens();
+                TranporteMinijogos();
             }
         }
 
@@ -161,9 +170,6 @@ public class Jogador : MonoBehaviour
 
         
     }
-
-  
-
 
 }
 
