@@ -17,6 +17,8 @@ public class Rotacao_Ilha : MonoBehaviour
     [SerializeField] bool RotacaoPositiva = true; //Rotação a favor ou contra o sentido dos ponteiros do relogio
     [SerializeField] int NumeroDeRotacoes = 3;
 
+    [SerializeField] Quaternion RotacaoChild;
+
     bool EmRotacao = false; //A sala está em rotação
 
     private Rigidbody Rb; //Rigidbody da Sala
@@ -35,7 +37,7 @@ public class Rotacao_Ilha : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, ImagemInteracao)) // Se a direção da camara do jogador estiver sobre o objeto-escala
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 10, ImagemInteracao)) // Se a direção da camara do jogador estiver sobre o objeto-escala
         {
             if (Input.GetKeyDown(KeyCode.E) && EmRotacao == false) //se o jogador pressionar a tecla "E" e a sala estiver parada
             {
@@ -75,6 +77,8 @@ public class Rotacao_Ilha : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.transform.parent = transform; //Jogador passa para filho da sala
+            other.transform.rotation = RotacaoChild;
+
         }
     }
 }

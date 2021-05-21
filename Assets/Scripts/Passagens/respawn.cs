@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class respawn : MonoBehaviour
 {
-    Vector3 PosCheckPoint0;
-    Quaternion OrientCheckPoint0;
-
     [SerializeField] GameObject CheckPointTrigger1; //tiggers de checkpoint
     [SerializeField] GameObject CheckPointTrigger2;
     [SerializeField] GameObject CheckPointTrigger3;
@@ -24,42 +21,40 @@ public class respawn : MonoBehaviour
 
     void Start()
     {
-        PosCheckPoint0 = transform.position;
-        OrientCheckPoint0 = transform.rotation;
-
-        LocalDeCheckpoint = PosCheckPoint0;
-        OrientacaoDeChekpoint = OrientCheckPoint0;      
-
+        LocalDeCheckpoint = transform.position;
+        Debug.Log(LocalDeCheckpoint);
+        OrientacaoDeChekpoint = transform.rotation;      
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == ("CheckPoint1"))
+        if (other.CompareTag("CheckPoint1"))
         {
             LocalDeCheckpoint = CheckPoint1.transform.position;
-            OrientCheckPoint0 = CheckPoint1.transform.rotation;
+            OrientacaoDeChekpoint = CheckPoint1.transform.rotation;
             Debug.Log("checkpoint sala1");
 
-        } else if (other.gameObject.tag == ("CheckPoint2"))
+        } else if (other.CompareTag("CheckPoint2"))
         {
             LocalDeCheckpoint = CheckPoint2.transform.position;
-            OrientCheckPoint0 = CheckPoint2.transform.rotation;
+            OrientacaoDeChekpoint = CheckPoint2.transform.rotation;
             Debug.Log("checkpoint sala2");
 
         }
-        else if (other.gameObject.tag == ("CheckPoint3"))
+        else if (other.CompareTag("CheckPoint3"))
         {
             LocalDeCheckpoint = CheckPoint3.transform.position;
-            OrientCheckPoint0 = CheckPoint3.transform.rotation;
+            OrientacaoDeChekpoint = CheckPoint3.transform.rotation;
         }
 
-        if (other.gameObject.tag==("Respawn"))
+        if (other.CompareTag("Respawn"))
         {
+            Debug.Log("respawn_jogador");
             transform.position = LocalDeCheckpoint;
+            Debug.Log(transform.position);
+
             transform.rotation = OrientacaoDeChekpoint;
         }
     }
-
-
 }
