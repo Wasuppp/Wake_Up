@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class respawn : MonoBehaviour
 {
+    [SerializeField] GameObject Jogador;
+
     [SerializeField] GameObject CheckPointTrigger1; //tiggers de checkpoint
     [SerializeField] GameObject CheckPointTrigger2;
     [SerializeField] GameObject CheckPointTrigger3;
@@ -19,16 +21,22 @@ public class respawn : MonoBehaviour
     Vector3 LocalDeCheckpoint; // variavel que guarda o local de checkpoint a cada instante
     Quaternion OrientacaoDeChekpoint;
 
-    void Start()
+    bool RespawnJogador = false;
+
+    void Awake()
     {
-        LocalDeCheckpoint = transform.position;
-        Debug.Log(LocalDeCheckpoint);
-        OrientacaoDeChekpoint = transform.rotation;      
+        LocalDeCheckpoint = Jogador.transform.position;
+        OrientacaoDeChekpoint = Jogador.transform.rotation;      
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == ("Respawn"))
+        {
+            RespawnJogador = true;
+        }
+
         if (other.CompareTag("CheckPoint1"))
         {
             LocalDeCheckpoint = CheckPoint1.transform.position;
@@ -48,13 +56,17 @@ public class respawn : MonoBehaviour
             OrientacaoDeChekpoint = CheckPoint3.transform.rotation;
         }
 
-        if (other.CompareTag("Respawn"))
-        {
-            Debug.Log("respawn_jogador");
-            transform.position = LocalDeCheckpoint;
-            Debug.Log(transform.position);
+    }
 
-            transform.rotation = OrientacaoDeChekpoint;
+
+    private void Update()
+    {
+        if (RespawnJogador == true)
+        {
+            Jogador.transform.position = LocalDeCheckpoint;
+            Jogador.transform.rotation = OrientacaoDeChekpoint;
+            RespawnJogador = false;
+
         }
     }
 }
