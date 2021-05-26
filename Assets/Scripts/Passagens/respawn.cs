@@ -63,7 +63,7 @@ public class respawn : MonoBehaviour
     {
         if (RespawnJogador == true)
         {
-            Jogador.transform.position = LocalDeCheckpoint;
+            Jogador.transform.position = new Vector3(98,6,7);
             Jogador.transform.rotation = OrientacaoDeChekpoint;
             RespawnJogador = false;
 
