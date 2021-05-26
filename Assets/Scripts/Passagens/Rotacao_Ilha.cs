@@ -17,7 +17,10 @@ public class Rotacao_Ilha : MonoBehaviour
     [SerializeField] bool RotacaoPositiva = true; //Rotação a favor ou contra o sentido dos ponteiros do relogio
     [SerializeField] int NumeroDeRotacoes = 3;
 
-    [SerializeField] Quaternion RotacaoChild;
+    AudioSource somR;
+
+
+ 
 
     bool EmRotacao = false; //A sala está em rotação
 
@@ -29,6 +32,7 @@ public class Rotacao_Ilha : MonoBehaviour
     private void Start()
     {
         Rb = GetComponent<Rigidbody>(); //É salvo o Rigid Body da sala
+        somR = GetComponent<AudioSource>();
     }
 
 
@@ -42,6 +46,7 @@ public class Rotacao_Ilha : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && EmRotacao == false) //se o jogador pressionar a tecla "E" e a sala estiver parada
             {
                 EmRotacao = true; // a sala roda
+                playsound();
             }
         }
 
@@ -77,8 +82,14 @@ public class Rotacao_Ilha : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.transform.parent = transform; //Jogador passa para filho da sala
-            other.transform.rotation = RotacaoChild;
+           
 
         }
+    }
+    void playsound()
+    {
+        somR.Play();
+
+
     }
 }
