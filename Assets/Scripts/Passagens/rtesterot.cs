@@ -31,7 +31,6 @@ public class rtesterot : MonoBehaviour
             if (Tempo > 1f)
             {
                 Player.transform.Rotate(0, -90, 0);
-                Debug.Log("Roda");
                 roda = false;
             }
         }

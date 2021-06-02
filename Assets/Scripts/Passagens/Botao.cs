@@ -22,14 +22,23 @@ public class Botao : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        CarregaBotao.Play("baixo");
-        BotaoPressionado = true;
-        Debug.Log("Botao");
+        if (collision.gameObject.tag == ("Player"))
+        {
+            Debug.Log("Botao");             
+            CarregaBotao.Play("baixo");
+            BotaoPressionado = true;
+ 
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        CarregaBotao.Play("baixo");
+        if (collision.gameObject.tag == ("Player"))
+        {
+            Debug.Log("Botao");
+            CarregaBotao.Play("baixo");
+        }
+
     }
 
     void RodarEscadas()

@@ -81,11 +81,18 @@ public class Rotacao_Ilha : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.transform.parent = transform; //Jogador passa para filho da sala
-           
-
+            other.transform.parent = transform; //Jogador passa para filho da sala        
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.transform.parent = null; //Jogador passa para filho da sala        
+        }
+    }
+
     void playsound()
     {
         somR.Play();
