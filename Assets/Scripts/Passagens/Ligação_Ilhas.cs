@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Ligação_Ilhas : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    bool EntrouemParent = false;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player") && EntrouemParent == false)
+        {
+            other.transform.parent = transform; //Jogador passa para filho da sala 
+            EntrouemParent = true;
+        }
     }
 }

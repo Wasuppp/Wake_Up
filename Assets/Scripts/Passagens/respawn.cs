@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class respawn : MonoBehaviour
 {
-    [SerializeField] GameObject Jogador;
-
     [SerializeField] GameObject CheckPointTrigger1; //tiggers de checkpoint
     [SerializeField] GameObject CheckPointTrigger2;
     [SerializeField] GameObject CheckPointTrigger3;
@@ -25,8 +23,8 @@ public class respawn : MonoBehaviour
 
     void Awake()
     {
-        LocalDeCheckpoint = Jogador.transform.position;
-        OrientacaoDeChekpoint = Jogador.transform.rotation;      
+        LocalDeCheckpoint = gameObject.transform.position;
+        OrientacaoDeChekpoint = gameObject.transform.rotation;      
     }
 
 
@@ -55,16 +53,14 @@ public class respawn : MonoBehaviour
             LocalDeCheckpoint = CheckPoint3.transform.position;
             OrientacaoDeChekpoint = CheckPoint3.transform.rotation;
         }
-
     }
-
 
     private void Update()
     {
         if (RespawnJogador == true)
         {
-            Jogador.transform.position = new Vector3(98,6,7);
-            Jogador.transform.rotation = OrientacaoDeChekpoint;
+            gameObject.transform.position = new Vector3(98,6,7);
+            gameObject.transform.rotation = OrientacaoDeChekpoint;
             RespawnJogador = false;
 
         }
