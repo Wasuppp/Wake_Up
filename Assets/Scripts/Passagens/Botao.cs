@@ -4,55 +4,37 @@ using UnityEngine;
 
 public class Botao : MonoBehaviour
 {
-    Animation CarregaBotao;
+    [SerializeField] Escadas Escadas;
 
-    [SerializeField] GameObject Escadas;
-    [SerializeField] GameObject ObjetoRotacao;
-    [SerializeField] float velocidadeRot;
-
-    float Contador;
+    //Animation Escadas;
+    Animator BotaoCarrega;
 
     bool BotaoPressionado = false;
 
+    bool SubirEscadas = false;
+
+
     private void Start()
     {
-        CarregaBotao = gameObject.GetComponent<Animation>();
-
+        BotaoCarrega = GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag == ("Player"))
+        if (other.CompareTag ("Player") && BotaoPressionado == false)
         {
-            Debug.Log("Botao");             
-            CarregaBotao.Play("baixo");
             BotaoPressionado = true;
- 
-        }
+        }        
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == ("Player"))
-        {
-            Debug.Log("Botao");
-            CarregaBotao.Play("baixo");
-        }
-
-    }
-
-    void RodarEscadas()
+    private void Update()
     {
         if (BotaoPressionado == true)
         {
+            BotaoCarrega.SetBool("Trigger (bool)", true);
+            SubirEscadas = true;
 
-            Escadas.transform.RotateAround(ObjetoRotacao.transform.position, new Vector3(0, 1, 0), velocidadeRot * Time.deltaTime); //A sala roda à volta do objeto de rotação, pelo eixo y, a uma velocidade constante
-
-            if (Escadas.transform.eulerAngles.y >= Contador) // se o valor da rotação em y for maior que o valor do contador, a rotação pára
-            {
-                BotaoPressionado = false;
-            }
+            Escadas.SobeEscadas(SubirEscadas);
         }
     }
-
 }

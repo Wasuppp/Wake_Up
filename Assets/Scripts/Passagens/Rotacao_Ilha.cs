@@ -19,7 +19,7 @@ public class Rotacao_Ilha : MonoBehaviour
 
     AudioSource somR;
 
-
+    bool EntrouemParent = false;
  
 
     bool EmRotacao = false; //A sala está em rotação
@@ -79,9 +79,10 @@ public class Rotacao_Ilha : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && EntrouemParent == false)
         {
-            other.transform.parent = transform; //Jogador passa para filho da sala        
+            other.transform.parent = transform; //Jogador passa para filho da sala 
+            EntrouemParent = true;
         }
     }
 
