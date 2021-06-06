@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class respawn : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class respawn : MonoBehaviour
     [SerializeField] GameObject CheckPoint3;
     [SerializeField] GameObject CheckPoint4;
     [SerializeField] GameObject CheckPoint5;
+
 
     Vector3 LocalDeCheckpoint; // variavel que guarda o local de checkpoint a cada instante
     Quaternion OrientacaoDeChekpoint;
@@ -59,10 +62,25 @@ public class respawn : MonoBehaviour
     {
         if (RespawnJogador == true)
         {
-            gameObject.transform.position = new Vector3(98,6,7);
+            SceneManager.LoadScene("Passagens");
+        }
+    }
+
+    /*
+    public IEnumerator Transporta() 
+    {
+        if (RespawnJogador == true)
+        {
+            Jogador.GetComponent<Plataforma>().enabled = false;
+
+            gameObject.transform.position = LocalDeCheckpoint;
             gameObject.transform.rotation = OrientacaoDeChekpoint;
             RespawnJogador = false;
 
+            yield return new WaitForSeconds(0.1f);
+
+            Jogador.GetComponent<>().enabled = true;
         }
     }
+    */
 }

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class TransportePass : MonoBehaviour
 {
-
     private bool DentroPortalLab;
 
     float Tempo;
@@ -21,7 +20,6 @@ public class TransportePass : MonoBehaviour
 
     }
 
-
     private void Update()
     {
         if (DentroPortalLab == true)
@@ -34,7 +32,6 @@ public class TransportePass : MonoBehaviour
             }
         }
     }
-
 }
 
 
