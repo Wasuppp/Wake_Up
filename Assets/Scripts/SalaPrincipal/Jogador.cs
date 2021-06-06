@@ -35,11 +35,12 @@ public class Jogador : MonoBehaviour
         if (other.tag == "TriggerLab" && BloquearNivelLabirinto == false)
         {
             DentroPortalLab = true;
-            Progresso.InstanciaUrso();
+            Progresso.InstanciaUrso();  
             BloquearNivelLabirinto = true;
             FadeToBlack();
 
         }
+
         if (other.tag == "TriggerPass" && BloquearNivelPassagens == false)
         {
             DentroPortalPass = true;

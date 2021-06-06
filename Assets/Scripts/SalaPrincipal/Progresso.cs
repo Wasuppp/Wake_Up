@@ -5,13 +5,19 @@ using UnityEngine;
 public class Progresso: MonoBehaviour
 {
     [SerializeField] GameObject Urso;
-    [SerializeField] GameObject PosicaoUrso;
+    [SerializeField] Transform PosicaoUrso;
+    [SerializeField] Light Luz2;
+    [SerializeField] Transform PosLuz2;
 
     [SerializeField] GameObject Papeis;
-    [SerializeField] GameObject PosicaoPapeis;
+    [SerializeField] Transform PosicaoPapeis;
+    [SerializeField] Light Luz1;
+    [SerializeField] Transform PosLuz1;
 
     [SerializeField] GameObject Telemovel;
-    [SerializeField] GameObject PosicaoTelemovel;
+    [SerializeField] Transform PosicaoTelemovel;
+    [SerializeField] Light Luz3;
+    [SerializeField] Transform PosLuz3;
 
     bool acabouCuboLabirinto = false;
     bool acabouPassagens = false;
@@ -24,16 +30,19 @@ public class Progresso: MonoBehaviour
 
     public void InstanciaUrso()
     {
-        Instantiate<GameObject>(Urso, PosicaoUrso.transform.position, PosicaoUrso.transform.rotation);
+        Instantiate(Urso, PosicaoUrso.transform.position, PosicaoUrso.transform.rotation);
+        Instantiate(Luz2, PosLuz2.transform.position, PosLuz2.transform.rotation);   
     }
 
     public void InstanciaPapeis()
     {
-        Instantiate<GameObject>(Papeis, PosicaoPapeis.transform.position, PosicaoPapeis.transform.rotation);
+        Instantiate(Papeis, PosicaoPapeis.transform.position, PosicaoPapeis.transform.rotation);
+        Instantiate(Luz1, PosLuz1.transform.position, PosLuz1.transform.rotation);
     }
 
     public void InstanciaTelemovel()
     {
-        Instantiate<GameObject>(Telemovel, PosicaoTelemovel.transform.position, PosicaoTelemovel.transform.rotation);
+        Instantiate(Telemovel, PosicaoTelemovel.transform.position, PosicaoTelemovel.transform.rotation);
+        Instantiate(Luz3, PosLuz3.transform.position, PosLuz3.transform.rotation);
     }
 }
