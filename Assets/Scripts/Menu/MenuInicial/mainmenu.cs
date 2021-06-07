@@ -10,7 +10,7 @@ public class mainmenu : MonoBehaviour
     float Tempo = 0f;
 
     bool MudarSalaPrincipal = false;
-    bool MudarCreditos = false;
+    bool MudarMenu = false;
     bool SairJogo = false;
 
     public void StartGame()
@@ -18,9 +18,9 @@ public class mainmenu : MonoBehaviour
         MudarSalaPrincipal = true; //O jogador pressiona em "Jogar"
     }
 
-    public void AbrirCreditos()
+    public void AbrirMenu()
     {
-        MudarCreditos = true; // O jogador pressiona em "Creditos"
+        MudarMenu = true; // O jogador pressiona em "Creditos"
     }
 
     public void SairDoJogo()//o jogador pressiona em "sair"
@@ -40,13 +40,13 @@ public class mainmenu : MonoBehaviour
                 MudarSalaPrincipal = false;
             }
 
-        } else if (MudarCreditos == true)
+        } else if (MudarMenu == true)
         {
             Tempo += Time.deltaTime;
             if (Tempo >= Delay)
             {
-                Creditos();
-                MudarCreditos = false;
+                Menu();
+                MudarMenu = false;
             }
 
         } else if (SairJogo == true)
@@ -66,9 +66,9 @@ public class mainmenu : MonoBehaviour
         SceneManager.LoadScene("Sala_Principal"); // muda a cena para a sala principal
     }
 
-    public void Creditos()
+    public void Menu()
     {
-        SceneManager.LoadScene("Creditos"); // muda a cena para creditos
+        SceneManager.LoadScene("Main menu"); // muda a cena para creditos
     }
     public void ExitGame()
     {
