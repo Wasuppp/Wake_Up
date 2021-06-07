@@ -10,9 +10,12 @@ public class Escadas : MonoBehaviour
 
     float Tempo = 0f;
 
+    AudioSource somE1;
+
     private void Start()
     {
         EscadasSobem = GetComponent<Animator>();
+        somE1 = GetComponent<AudioSource>();
     }
 
     public void SobeEscadas(bool SubirEscadas)
@@ -21,6 +24,8 @@ public class Escadas : MonoBehaviour
         {
             EscadasSobem.SetBool("Trigger", true);
             SubirAsEscadas = true;
+            som2();
+
         }
     }
 
@@ -35,5 +40,10 @@ public class Escadas : MonoBehaviour
                 EscadasSobem.SetBool("Trigger", false);
             }
         }
+    }
+    void som2()
+    {
+        somE1.Play();
+        Debug.Log("somtocar");
     }
 }

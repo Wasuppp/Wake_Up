@@ -13,10 +13,13 @@ public class Botao2 : MonoBehaviour
 
     bool SubirEscadas2 = false;
 
+    AudioSource Sombotao;
+
 
     private void Start()
     {
         Botao2Carrega = GetComponent<Animator>();
+        Sombotao= GetComponent<AudioSource>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -24,6 +27,7 @@ public class Botao2 : MonoBehaviour
         if (other.CompareTag ("Player") && Botao2Pressionado == false)
         {
             Botao2Pressionado = true;
+            sombotao();
         }        
     }
 
@@ -34,7 +38,13 @@ public class Botao2 : MonoBehaviour
             Botao2Carrega.SetBool("Trigger (bool)", true);
             SubirEscadas2 = true;
 
-            Escadas2.SobeEscadas2 (SubirEscadas2);
+            Escadas2.SobeEscadas2(SubirEscadas2);
         }
+    }
+    void sombotao()
+    {
+        Sombotao.Play();
+        Debug.Log("sombotao");
+
     }
 }
