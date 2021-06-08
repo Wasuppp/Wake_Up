@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class Papeis : MonoBehaviour
 {
     [SerializeField] float TempoTransporte = 2;
-
-    [SerializeField] bool rodar = false;
     
     float Tempo = 0f;
     bool Transporte = false;
@@ -21,18 +19,15 @@ public class Papeis : MonoBehaviour
     }
     void Update()
     {
-        if (rodar == true)
+        transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
+
+        if (Transporte == true)
         {
-            transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
+            Tempo += Time.deltaTime;
 
-            if (Transporte == true)
+            if (Tempo > TempoTransporte)
             {
-                Tempo += Time.deltaTime;
-
-                if (Tempo > TempoTransporte)
-                {
-                    MudarCena();
-                }
+                MudarCena();
             }
         }
     }

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Urso : MonoBehaviour
 {
     [SerializeField] float TempoTransporte = 2;
-    [SerializeField] bool Rodar = false;
     
     float Tempo = 0f;
     bool Transporte = false;
@@ -20,21 +19,17 @@ public class Urso : MonoBehaviour
     }
     void Update()
     {
-        if (Rodar == true)
+        transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
+
+        if (Transporte == true)
         {
-            transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
+            Tempo += Time.deltaTime;
 
-            if (Transporte == true)
+            if (Tempo > TempoTransporte)
             {
-                Tempo += Time.deltaTime;
-
-                if (Tempo > TempoTransporte)
-                {
-                    MudarCena();
-                }
+                MudarCena();
             }
         }
-
     }
 
     public void MudarCena()
