@@ -29,7 +29,6 @@ public class Jogador : MonoBehaviour
         FadeFromBlack();
     }
 
-
     void OnTriggerEnter(Collider other)
     {
 
@@ -61,18 +60,15 @@ public class Jogador : MonoBehaviour
 
         if (other.CompareTag("Porta1"))
         {
-
             other.GetComponent<AudioSource>().Play();
         }
 
         if (other.CompareTag("Porta2"))
         {
-
             other.GetComponent<AudioSource>().Play();
         }
         if (other.CompareTag("Porta3"))
         {
-
             other.GetComponent<AudioSource>().Play();
         }
 
@@ -146,24 +142,18 @@ public class Jogador : MonoBehaviour
     {
         if (other.CompareTag("Porta1"))
         {
-
             other.GetComponent<AudioSource>().Stop();
         }
 
         if (other.CompareTag("Porta2"))
         {
-
             other.GetComponent<AudioSource>().Stop();
         }
 
         if (other.CompareTag("Porta3"))
         {
-
             other.GetComponent<AudioSource>().Stop();
-        }
-
-        
+        }       
     }
-
 }
 

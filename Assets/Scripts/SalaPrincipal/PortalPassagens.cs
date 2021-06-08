@@ -15,6 +15,7 @@ public class Portais : MonoBehaviour
     [SerializeField] Material PortalDesativado;
     [SerializeField] Material PortalAtivado;
 
+
     bool PortalPassDesativado = false;
     bool ConstantePass = false;
 
@@ -23,6 +24,28 @@ public class Portais : MonoBehaviour
 
     bool PortalLabDesativado = false;
     bool ConstanteLab = false;
+
+    private void Awake()
+    {
+        ConstantePass = false;
+        ConstanteLab = false;
+        ConstanteMin = false;
+    }
+    public void VerificaProgressoPass()
+    {
+        PortalPassDesativado = true;
+        Debug.Log("ddesativadoLabirinto");
+    }
+
+    public void VerificaProgressoMin()
+    {
+        PortalMinDesativado = true;
+    }
+
+    public void VerificaProgressoLab()
+    {
+        PortalPassDesativado = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,6 +59,7 @@ public class Portais : MonoBehaviour
 
         if (PortalLabDesativado == true && ConstanteLab == false)
         {
+            Debug.Log("ddesativadoLabirinto");
             ConstanteLab = true;
             PortalLab.GetComponent<Collider>().isTrigger = false;
             PortalL.GetComponent<MeshRenderer>().material = PortalDesativado;
@@ -50,21 +74,4 @@ public class Portais : MonoBehaviour
 
     }
 
-    public void VerificaProgressoPass()
-    {
-        PortalPassDesativado = true;
-        Update();
-    }
-
-    public void VerificaProgressoMin()
-    {
-        PortalMinDesativado = true;
-        Update();
-    }
-
-    public void VerificaProgressoLab()
-    {
-        PortalPassDesativado = true;
-        Update();
-    }
 }
