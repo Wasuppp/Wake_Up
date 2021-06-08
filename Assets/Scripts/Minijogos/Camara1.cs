@@ -18,7 +18,9 @@ public class Camara1 : MonoBehaviour
 
     void  Start()
     {
-        objeto1.GetComponent<RotacaoObjeto>().enabled = false;
+        objeto1.GetComponent<RotacaoObjeto1>().enabled = false;
+        objeto2.GetComponent<RotacaoObjeto2>().enabled = false;
+
         jogador.enabled = true;
         camara1.enabled = false;
         camara2.enabled = false;
@@ -26,27 +28,20 @@ public class Camara1 : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Rotacao1"))
+        if (other.CompareTag("Rotacao1") && Input.GetKeyDown(KeyCode.E) && MudarCamara1 == false)
         {
-            if (Input.GetKeyDown(KeyCode.E) && MudarCamara1 == false)
-            {
-                objeto1.GetComponent<RotacaoObjeto>().enabled = true;
-                MudarCamara1 = true;
-                jogador.enabled = !jogador.enabled;
-                camara1.enabled = !camara1.enabled;
-            }
-        }
-        if (other.CompareTag("Rotacao2"))
-        {
-            if (Input.GetKeyDown(KeyCode.E) && MudarCamara2 == false)
-            {
-                objeto2.GetComponent<RotacaoObjeto>().enabled = true;
-                MudarCamara2 = true;
-                jogador.enabled = !jogador.enabled;
-                camara2.enabled = !camara2.enabled;
-            }
+            objeto1.GetComponent<RotacaoObjeto1>().enabled = true;
+            MudarCamara1 = true;
+            jogador.enabled = !jogador.enabled;
+            camara1.enabled = !camara1.enabled;
         }
 
-
+        if (other.CompareTag("Rotacao2") && Input.GetKeyDown(KeyCode.E) && MudarCamara2 == false)
+        {
+            objeto2.GetComponent<RotacaoObjeto2>().enabled = true;
+            MudarCamara2 = true;
+            jogador.enabled = !jogador.enabled;
+            camara2.enabled = !camara2.enabled;
+        }
     }
 }

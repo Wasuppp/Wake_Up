@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotacaoObjeto1 : MonoBehaviour
+public class RotacaoObjeto2 : MonoBehaviour
 {
     [SerializeField] Camera jogador;
 
-    [SerializeField] Camera camara1;
+    [SerializeField] Camera camara2;
 
     bool Xcorreto = false;
     bool Ycorreto = false;
@@ -20,13 +20,13 @@ public class RotacaoObjeto1 : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            transform.Rotate((Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime),
-            (Input.GetAxis("Mouse Y") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
+        transform.Rotate((Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime),
+         (Input.GetAxis("Mouse Y") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            camara1.enabled = !camara1.enabled;
+            camara2.enabled = !camara2.enabled;
             jogador.enabled = !jogador.enabled;
         }
     }
