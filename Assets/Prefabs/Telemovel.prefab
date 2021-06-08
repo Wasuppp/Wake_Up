@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4160303310493245862}
   - component: {fileID: 4483021910462531137}
+  - component: {fileID: -3850331081501894961}
   - component: {fileID: 4483021910462531139}
   m_Layer: 0
   m_Name: Telemovel
@@ -197,8 +198,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3672559589311953692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.75, y: 2.5, z: -1.25}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 2547738826060953707}
@@ -223,6 +224,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.05, z: 0.03}
   m_Center: {x: 0, y: 0.02, z: 0}
+--- !u!114 &-3850331081501894961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672559589311953692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b0a82597b25964489e669d60e06a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4483021910462531139
 MonoBehaviour:
   m_ObjectHideFlags: 0

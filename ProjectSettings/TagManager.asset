@@ -25,6 +25,7 @@ TagManager:
   - CheckPoint3
   - CheckPoint4
   - plane
+  - Nulo
   layers:
   - Default
   - TransparentFX

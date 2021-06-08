@@ -30,13 +30,14 @@ public class Jogador : MonoBehaviour
     }
 
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+
         if (other.tag == "TriggerLab" && BloquearNivelLabirinto == false)
         {
-            DentroPortalLab = true;
-            Progresso.InstanciaUrso();  
+            DentroPortalLab = true;  
             BloquearNivelLabirinto = true;
+            Progresso.InstanciaUrso();
             FadeToBlack();
 
         }
@@ -44,8 +45,8 @@ public class Jogador : MonoBehaviour
         if (other.tag == "TriggerPass" && BloquearNivelPassagens == false)
         {
             DentroPortalPass = true;
-            Progresso.InstanciaPapeis();
             BloquearNivelPassagens = true;
+            Progresso.InstanciaPapeis();
             FadeToBlack();
 
         }
@@ -53,9 +54,26 @@ public class Jogador : MonoBehaviour
         if (other.tag == "TriggerMin" && BloquearNivelMinijogos == false)
         {
             DentroPortalMin = true;
-            Progresso.InstanciaTelemovel();
             BloquearNivelMinijogos = true;
+            Progresso.InstanciaTelemovel();
             FadeToBlack();
+        }
+
+        if (other.CompareTag("Porta1"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
+
+        if (other.CompareTag("Porta2"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
+        }
+        if (other.CompareTag("Porta3"))
+        {
+
+            other.GetComponent<AudioSource>().Play();
         }
 
     }
@@ -95,7 +113,6 @@ public class Jogador : MonoBehaviour
 
     }
 
-
     public void TransporteLabirinto()
     {
         SceneManager.LoadScene("Cubo_Labirinto");
@@ -125,30 +142,6 @@ public class Jogador : MonoBehaviour
         blackScreen.CrossFadeAlpha(0.0f, tempoTransicaoPreto, false);
     }
 
-
-    //Efeitos Sonoros
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Porta1"))
-        {
-
-            other.GetComponent<AudioSource>().Play();
-        }
-
-        if (other.CompareTag("Porta2"))
-        {
-
-            other.GetComponent<AudioSource>().Play();
-        }
-        if (other.CompareTag("Porta3"))
-        {
-
-            other.GetComponent<AudioSource>().Play();
-        }
-
-        
-        
-    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Porta1"))
