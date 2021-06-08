@@ -364,6 +364,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43587143}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &46488591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46488593}
+  - component: {fileID: 46488592}
+  m_Layer: 0
+  m_Name: Getor-Portais
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &46488592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46488591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a501ee1eada09469e9d12ed0fd390d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Progresso: {fileID: 413064817}
+  PortalPass: {fileID: 828094944}
+  PortalMin: {fileID: 43587143}
+  PortalLab: {fileID: 1139892723}
+  PortalP: {fileID: 789616113}
+  PortalM: {fileID: 1929454417}
+  PortalL: {fileID: 32256797}
+  PortalDesativado: {fileID: 2100000, guid: 51223e34be0f36e4285bcd3cc963c71d, type: 2}
+  PortalAtivado: {fileID: 2100000, guid: 14839d72e1c5db24da03ac86243fed5a, type: 2}
+--- !u!4 &46488593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46488591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1074.8087, y: 9.151204, z: -1.6233053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &205904931
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +618,7 @@ MonoBehaviour:
   PosTelemovel: {fileID: 482008139}
   Luz3: {fileID: 5924287263845942837, guid: e7c0920cfad977049916721898a1d670, type: 3}
   PosLuz3: {fileID: 2073485790}
-  Portais: {fileID: 413064819}
+  Portais: {fileID: 46488592}
 --- !u!4 &413064818
 Transform:
   m_ObjectHideFlags: 0
@@ -596,17 +648,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 413064816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a501ee1eada09469e9d12ed0fd390d, type: 3}
+  m_Script: {fileID: 11500000, guid: d2b0a82597b25964489e669d60e06a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortalPass: {fileID: 828094944}
-  PortalMin: {fileID: 43587143}
-  PortalLab: {fileID: 1139892723}
-  PortalP: {fileID: 789616113}
-  PortalM: {fileID: 1929454417}
-  PortalL: {fileID: 32256797}
-  PortalDesativado: {fileID: 2100000, guid: 51223e34be0f36e4285bcd3cc963c71d, type: 2}
-  PortalAtivado: {fileID: 2100000, guid: 14839d72e1c5db24da03ac86243fed5a, type: 2}
 --- !u!1 &482008139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1830,7 @@ GameObject:
   m_TagString: TriggerLab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!4 &1139892724
 Transform:

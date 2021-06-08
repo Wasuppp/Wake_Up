@@ -28,22 +28,23 @@ public class Progresso: MonoBehaviour
 
     public void InstanciaUrso()
     {
-        Portais.VerificaProgressoLab();
+        Portais.Labirinto();
         Instantiate(Urso, PosUrso.transform.position, PosUrso.transform.rotation);
         Instantiate(Luz2, PosLuz2.transform.position, PosLuz2.transform.rotation);
     }
 
     public void InstanciaPapeis()
     {
-        Portais.VerificaProgressoPass();
+        Portais.Passagens();
         Instantiate(Papeis, PosPapel.transform.position, PosPapel.transform.rotation);
         Instantiate(Luz1, PosLuz1.transform.position, PosLuz1.transform.rotation);
     }
 
     public void InstanciaTelemovel()
     {
-        Portais.VerificaProgressoMin();
+        Portais.Minijogos();
         Instantiate(Telemovel, PosTelemovel.transform.position, PosTelemovel.transform.rotation);
         Instantiate(Luz3, PosLuz3.transform.position, PosLuz3.transform.rotation);
     }
+
 }

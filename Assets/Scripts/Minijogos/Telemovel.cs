@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Telemovel : MonoBehaviour
 {
     [SerializeField] float TempoTransporte = 2;
-    
+    [SerializeField] bool rodar = false;
+
     float Tempo = 0f;
     bool Transporte = false;
 
@@ -19,17 +20,21 @@ public class Telemovel : MonoBehaviour
     }
     void Update()
     {
-        transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
-
-        if (Transporte == true)
+        if (rodar == true)
         {
-            Tempo += Time.deltaTime;
+            transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
 
-            if (Tempo > TempoTransporte)
+            if (Transporte == true)
             {
-                MudarCena();
+                Tempo += Time.deltaTime;
+
+                if (Tempo > TempoTransporte)
+                {
+                    MudarCena();
+                }
             }
         }
+
     }
 
     public void MudarCena()
