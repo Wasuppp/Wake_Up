@@ -27,6 +27,7 @@ public class Jogador : MonoBehaviour
     private void Awake()
     {
         FadeFromBlack();
+
     }
 
     void OnTriggerEnter(Collider other)
