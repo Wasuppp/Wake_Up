@@ -5,23 +5,21 @@ using UnityEngine;
 public class Progresso: MonoBehaviour
 {
     [SerializeField] GameObject Urso;
-    [SerializeField] Transform PosicaoUrso;
+    [SerializeField] GameObject PosUrso;
     [SerializeField] Light Luz2;
     [SerializeField] Transform PosLuz2;
 
     [SerializeField] GameObject Papeis;
-    [SerializeField] Transform PosicaoPapeis;
+    [SerializeField] GameObject PosPapel;
     [SerializeField] Light Luz1;
     [SerializeField] Transform PosLuz1;
 
     [SerializeField] GameObject Telemovel;
-    [SerializeField] Transform PosicaoTelemovel;
+    [SerializeField] GameObject PosTelemovel;
     [SerializeField] Light Luz3;
     [SerializeField] Transform PosLuz3;
 
-    bool acabouCuboLabirinto = false;
-    bool acabouPassagens = false;
-    bool acabouMinijogos = false;
+    [SerializeField] Portais Portais;
 
     private void Awake()
     {
@@ -30,19 +28,22 @@ public class Progresso: MonoBehaviour
 
     public void InstanciaUrso()
     {
-        Instantiate(Urso, PosicaoUrso.transform.position, PosicaoUrso.transform.rotation);
-        Instantiate(Luz2, PosLuz2.transform.position, PosLuz2.transform.rotation);   
+        Portais.VerificaProgressoLab();
+        Instantiate(Urso, PosUrso.transform.position, PosUrso.transform.rotation);
+        Instantiate(Luz2, PosLuz2.transform.position, PosLuz2.transform.rotation);
     }
 
     public void InstanciaPapeis()
     {
-        Instantiate(Papeis, PosicaoPapeis.transform.position, PosicaoPapeis.transform.rotation);
+        Portais.VerificaProgressoPass();
+        Instantiate(Papeis, PosPapel.transform.position, PosPapel.transform.rotation);
         Instantiate(Luz1, PosLuz1.transform.position, PosLuz1.transform.rotation);
     }
 
     public void InstanciaTelemovel()
     {
-        Instantiate(Telemovel, PosicaoTelemovel.transform.position, PosicaoTelemovel.transform.rotation);
+        Portais.VerificaProgressoMin();
+        Instantiate(Telemovel, PosTelemovel.transform.position, PosTelemovel.transform.rotation);
         Instantiate(Luz3, PosLuz3.transform.position, PosLuz3.transform.rotation);
     }
 }
