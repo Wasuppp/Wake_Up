@@ -153,9 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jogador: {fileID: 537038842}
   camara1: {fileID: 1914268291}
-  ImagemInteracao:
-    serializedVersion: 2
-    m_Bits: 256
   objeto1: {fileID: 919132148711654835}
 --- !u!4 &208270819
 Transform:
@@ -191,9 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jogador: {fileID: 537038842}
   camara1: {fileID: 1914268291}
-  ImagemInteracao:
-    serializedVersion: 2
-    m_Bits: 256
   objeto1: {fileID: 919132148711654835}
 --- !u!1 &370231289
 GameObject:
@@ -2066,7 +2060,7 @@ GameObject:
   - component: {fileID: 3469287836885635244}
   - component: {fileID: 1711813856381510758}
   - component: {fileID: 919132148711654836}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: "TrianguloImposs\xEDvel"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

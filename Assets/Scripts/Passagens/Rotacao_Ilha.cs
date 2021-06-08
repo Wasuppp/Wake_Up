@@ -38,7 +38,6 @@ public class Rotacao_Ilha : MonoBehaviour
 
     void FixedUpdate()
     {
-
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 10, ImagemInteracao)) // Se a direção da camara do jogador estiver sobre o objeto-escala
