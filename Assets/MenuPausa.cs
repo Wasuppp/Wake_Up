@@ -59,4 +59,5 @@ public class MenuPausa : MonoBehaviour
         Application.Quit();
 
     }
+
 }
