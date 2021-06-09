@@ -523,7 +523,7 @@ Transform:
   m_Father: {fileID: 1049859052}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &413064816
+--- !u!1 &370563105
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -531,28 +531,35 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 413064818}
-  - component: {fileID: 413064817}
-  - component: {fileID: 413064819}
+  - component: {fileID: 370563107}
+  - component: {fileID: 370563106}
   m_Layer: 0
-  m_Name: Instanciador
+  m_Name: PersistentManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &413064817
+--- !u!114 &370563106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413064816}
+  m_GameObject: {fileID: 370563105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c38625ad740e9a840917f0766f2b76cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bfff939b3b346c4db32e6ddeccb1f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PortalPass: {fileID: 828094944}
+  PortalMin: {fileID: 43587143}
+  PortalLab: {fileID: 1139892723}
+  PortalP: {fileID: 789616113}
+  PortalM: {fileID: 1929454417}
+  PortalL: {fileID: 32256797}
+  PortalDesativado: {fileID: 2100000, guid: 51223e34be0f36e4285bcd3cc963c71d, type: 2}
+  PortalAtivado: {fileID: 2100000, guid: 14839d72e1c5db24da03ac86243fed5a, type: 2}
   Urso: {fileID: 2638836147360768368, guid: aafc9bf744c17a74b8a0c3c0e44474f1, type: 3}
   PosUrso: {fileID: 774101620}
   Luz2: {fileID: 1499020010197793456, guid: b0e10efac13085b42811f600adead469, type: 3}
@@ -566,7 +573,42 @@ MonoBehaviour:
   PosTelemovel: {fileID: 482008139}
   Luz3: {fileID: 5924287263845942837, guid: e7c0920cfad977049916721898a1d670, type: 3}
   PosLuz3: {fileID: 2073485790}
-  Portais: {fileID: 413064819}
+  TerminouPass: 0
+  TerminouLab: 0
+  TerminouMin: 0
+  PortalPassDesativado: 0
+  PortalMinDesativado: 0
+  PortalLabDesativado: 0
+--- !u!4 &370563107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370563105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1066.2169, y: 6.954912, z: 3.476912}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &413064816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413064818}
+  m_Layer: 0
+  m_Name: Instanciador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &413064818
 Transform:
   m_ObjectHideFlags: 0
@@ -587,26 +629,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &413064819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413064816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80c094860b200804ca8809368db4570b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PortalPass: {fileID: 828094944}
-  PortalMin: {fileID: 43587143}
-  PortalLab: {fileID: 1139892723}
-  PortalP: {fileID: 789616113}
-  PortalM: {fileID: 1929454417}
-  PortalL: {fileID: 32256797}
-  PortalDesativado: {fileID: 2100000, guid: 51223e34be0f36e4285bcd3cc963c71d, type: 2}
-  PortalAtivado: {fileID: 2100000, guid: 14839d72e1c5db24da03ac86243fed5a, type: 2}
 --- !u!1 &482008139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2746,49 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &1812485336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812485338}
+  - component: {fileID: 1812485337}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1812485337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812485336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3891b3a740a50194ea9ebe0bd6d02f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1812485338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812485336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1066.2169, y: 6.954912, z: 3.476912}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929454417
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,7 +3075,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Progresso
       value: 
-      objectReference: {fileID: 413064817}
+      objectReference: {fileID: 0}
     - target: {fileID: 8350646145992175611, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
       propertyPath: blackScreen
@@ -3021,6 +3086,11 @@ PrefabInstance:
       propertyPath: tempoTransicaoPreto
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8350646145992175611, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
+        type: 3}
+      propertyPath: PersistentManagerScript
+      value: 
+      objectReference: {fileID: 370563106}
     - target: {fileID: 8350646145992537050, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
       propertyPath: m_RootOrder

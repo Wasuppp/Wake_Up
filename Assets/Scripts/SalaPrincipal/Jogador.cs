@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Jogador : MonoBehaviour
 {
-    [SerializeField] Progresso Progresso;
+    [SerializeField] PersistentManagerScript PersistentManagerScript;
 
     private float Tempo = 0f;
 
@@ -36,7 +36,7 @@ public class Jogador : MonoBehaviour
         {
             DentroPortalLab = true;  
             BloquearNivelLabirinto = true;
-            Progresso.InstanciaUrso();
+            PersistentManagerScript.InstanciaUrso();
             FadeToBlack();
 
         }
@@ -45,7 +45,7 @@ public class Jogador : MonoBehaviour
         {
             DentroPortalPass = true;
             BloquearNivelPassagens = true;
-            Progresso.InstanciaPapeis();
+            PersistentManagerScript.InstanciaPapeis();
             FadeToBlack();
 
         }
@@ -54,7 +54,7 @@ public class Jogador : MonoBehaviour
         {
             DentroPortalMin = true;
             BloquearNivelMinijogos = true;
-            Progresso.InstanciaTelemovel();
+            PersistentManagerScript.InstanciaTelemovel();
             FadeToBlack();
         }
 
