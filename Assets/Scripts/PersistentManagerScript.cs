@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PersistentManagerScript : MonoBehaviour
 {
+    [SerializeField] GameObject CuboFinal;
+    [SerializeField] GameObject PosCuboFinal;
+
     [SerializeField] GameObject PortalPass;
     [SerializeField] GameObject PortalMin;
     [SerializeField] GameObject PortalLab;
@@ -35,6 +38,8 @@ public class PersistentManagerScript : MonoBehaviour
     public bool TerminouPass;
     public bool TerminouLab;
     public bool TerminouMin;
+
+    bool CuboFinalInstanciado = false;
 
     private void Awake()
     {
@@ -95,6 +100,12 @@ public class PersistentManagerScript : MonoBehaviour
         {
             PortalMin.GetComponent<Collider>().isTrigger = false;
             PortalM.GetComponent<MeshRenderer>().material = PortalDesativado;
+        }
+
+        if (PortalLabDesativado == true && PortalLabDesativado == true && PortalMinDesativado == true && CuboFinalInstanciado == false)
+        {
+            Instantiate(CuboFinal, PosCuboFinal.transform.position, PosCuboFinal.transform.rotation);
+            CuboFinalInstanciado = true;
         }
     }
 }

@@ -13,7 +13,6 @@ public class PortalPassagens : MonoBehaviour
     bool DentroPortalPass = false;
     bool BloquearNivelPassagens = false;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

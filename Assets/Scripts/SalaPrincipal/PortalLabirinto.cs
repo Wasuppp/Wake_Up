@@ -14,6 +14,21 @@ public class PortalLabirinto : MonoBehaviour
     bool DentroPortalLab = false;
     bool BloquearNivelLabirinto = false;
 
+    public static PortalLabirinto Instanciado { get; private set; }
+
+    private void Awake()
+    {
+        if (Instanciado == null)
+        {
+            Instanciado = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

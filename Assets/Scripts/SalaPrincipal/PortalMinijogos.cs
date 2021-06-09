@@ -13,6 +13,20 @@ public class PortalMinijogos : MonoBehaviour
 
     bool DentroPortalMin = false;
     bool BloquearNivelMinijogos= false;
+    public static PortalMinijogos Instanciado { get; private set; }
+
+    private void Awake()
+    {
+        if (Instanciado == null)
+        {
+            Instanciado = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
