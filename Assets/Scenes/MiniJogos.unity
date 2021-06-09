@@ -1602,7 +1602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1316104679 stripped
 GameObject:
@@ -2075,7 +2075,7 @@ RectTransform:
   - {fileID: 756929328}
   - {fileID: 1885904639}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2660,7 +2660,7 @@ RectTransform:
   m_Children:
   - {fileID: 706573928}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4678,6 +4678,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483021910462531139, guid: 281529635127892419361cfaa91c6bd6,
+        type: 3}
+      propertyPath: Rodar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483021910462531139, guid: 281529635127892419361cfaa91c6bd6,
+        type: 3}
+      propertyPath: TempoTransporte
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6133083595972187589, guid: 281529635127892419361cfaa91c6bd6,
         type: 3}

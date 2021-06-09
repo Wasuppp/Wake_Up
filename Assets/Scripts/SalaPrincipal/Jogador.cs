@@ -15,15 +15,6 @@ public class Jogador : MonoBehaviour
     [SerializeField] Image blackScreen;
     [SerializeField] float tempoTransicaoPreto;
 
-    bool DentroPortalLab = false; // O jogador está dentro do portal
-    bool BloquearNivelLabirinto = false;
-
-    bool DentroPortalPass = false;
-    bool BloquearNivelPassagens = false;
-
-    bool DentroPortalMin = false;
-    bool BloquearNivelMinijogos = false;
-
     private void Awake()
     {
         FadeFromBlack();
@@ -32,29 +23,18 @@ public class Jogador : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "TriggerLab" && BloquearNivelLabirinto == false)
+        if (other.tag == "TriggerLab")
         {
-            DentroPortalLab = true;  
-            BloquearNivelLabirinto = true;
-            PersistentManagerScript.InstanciaUrso();
             FadeToBlack();
-
         }
 
-        if (other.tag == "TriggerPass" && BloquearNivelPassagens == false)
+        if (other.tag == "TriggerPass")
         {
-            DentroPortalPass = true;
-            BloquearNivelPassagens = true;
-            PersistentManagerScript.InstanciaPapeis();
             FadeToBlack();
-
         }
         
-        if (other.tag == "TriggerMin" && BloquearNivelMinijogos == false)
+        if (other.tag == "TriggerMin")
         {
-            DentroPortalMin = true;
-            BloquearNivelMinijogos = true;
-            PersistentManagerScript.InstanciaTelemovel();
             FadeToBlack();
         }
 
@@ -70,41 +50,6 @@ public class Jogador : MonoBehaviour
         if (other.CompareTag("Porta3"))
         {
             other.GetComponent<AudioSource>().Play();
-        }
-
-    }
-
-
-    private void Update()
-    {
-        if (DentroPortalLab == true)
-        {
-            Tempo += Time.deltaTime;
-
-            if (Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
-            {
-                TransporteLabirinto();
-            }
-        }
-
-        if (DentroPortalPass == true)
-        {
-            Tempo += Time.deltaTime;
-
-            if (Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
-            {
-                TransportePassagens();
-            }
-        }
-
-        if (DentroPortalMin == true)
-        {
-            Tempo += Time.deltaTime;
-
-            if (Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
-            {
-                TranporteMinijogos();
-            }
         }
 
     }

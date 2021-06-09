@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3446616912683236298}
   - component: {fileID: 5194779561844294676}
+  - component: {fileID: 1977346278768914250}
   m_Layer: 0
   m_Name: Urso
   m_TagString: Untagged
@@ -183,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2638836147360768368}
   m_LocalRotation: {x: -0, y: 0.49999982, z: -0, w: 0.8660255}
-  m_LocalPosition: {x: -0.7, y: 2.5, z: 1.21}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 8718817699530227110}
@@ -208,6 +209,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b0a82597b25964489e669d60e06a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1977346278768914250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2638836147360768368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293df97ca09f6fa4cb4777bf8b1d4105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TempoTransporte: 2
+  Rodar: 0
 --- !u!1 &3557559347393255330
 GameObject:
   m_ObjectHideFlags: 0

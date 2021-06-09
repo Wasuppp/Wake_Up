@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 32256800}
   - component: {fileID: 32256799}
   - component: {fileID: 32256798}
+  - component: {fileID: 32256802}
   m_Layer: 0
   m_Name: Portal Labirinto
   m_TagString: Untagged
@@ -271,6 +272,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &32256802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32256797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b0a82597b25964489e669d60e06a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &43587143
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +296,7 @@ GameObject:
   - component: {fileID: 43587147}
   - component: {fileID: 43587146}
   - component: {fileID: 43587145}
+  - component: {fileID: 43587148}
   m_Layer: 0
   m_Name: Cube
   m_TagString: TriggerMin
@@ -364,6 +378,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43587143}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &43587148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43587143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b362a55716b68d479543c50d17779c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PersistentManagerScript: {fileID: 370563106}
+  TempoEsperaTransporte: 2
 --- !u!1 &205904931
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,9 +651,9 @@ Transform:
   - {fileID: 2073485790}
   - {fileID: 1726592269}
   - {fileID: 1338781953}
+  - {fileID: 774101621}
   - {fileID: 482008140}
   - {fileID: 881876224}
-  - {fileID: 774101621}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -652,13 +680,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482008139}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 2.5, z: -1.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.06526329, y: -0.49572206, z: -0.11303947, w: 0.85861665}
+  m_LocalPosition: {x: -0.6999512, y: 2, z: -1.3}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 413064818}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -60.000004, z: -15.000001}
 --- !u!1001 &634138909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1220,7 +1248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 413064818}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 60.000004, z: 0}
 --- !u!1 &789616113
 GameObject:
@@ -1234,6 +1262,7 @@ GameObject:
   - component: {fileID: 789616117}
   - component: {fileID: 789616116}
   - component: {fileID: 789616115}
+  - component: {fileID: 789616118}
   m_Layer: 0
   m_Name: Portal Passagens
   m_TagString: Untagged
@@ -1316,6 +1345,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789616113}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &789616118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789616113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b0a82597b25964489e669d60e06a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &828094944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1369,7 @@ GameObject:
   - component: {fileID: 828094948}
   - component: {fileID: 828094947}
   - component: {fileID: 828094946}
+  - component: {fileID: 828094949}
   m_Layer: 0
   m_Name: Cube
   m_TagString: TriggerPass
@@ -1409,6 +1451,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828094944}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &828094949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828094944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a501ee1eada09469e9d12ed0fd390d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PersistentManagerScript: {fileID: 370563106}
+  TempoEsperaTransporte: 2
 --- !u!1 &881876223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,13 +1488,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881876223}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 2.5, z: 0.20000005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.3535534, y: -0.61237246, z: -0.3535534, w: 0.61237246}
+  m_LocalPosition: {x: 1.5, y: 2.42, z: 0}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 413064818}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -60.000004, y: -90, z: 0}
 --- !u!1 &895416906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +1859,7 @@ GameObject:
   - component: {fileID: 1139892727}
   - component: {fileID: 1139892726}
   - component: {fileID: 1139892725}
+  - component: {fileID: 1139892728}
   m_Layer: 0
   m_Name: Cube
   m_TagString: TriggerLab
@@ -1884,6 +1941,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139892723}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1139892728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139892723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aaa77f546468d449a4da21096ac660c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PersistentManagerScript: {fileID: 370563106}
+  TempoEsperaTransporte: 2
 --- !u!1 &1148031769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2872,7 @@ GameObject:
   - component: {fileID: 1929454421}
   - component: {fileID: 1929454420}
   - component: {fileID: 1929454419}
+  - component: {fileID: 1929454422}
   m_Layer: 0
   m_Name: Portal MiniJogos
   m_TagString: Untagged
@@ -2883,6 +2955,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929454417}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1929454422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929454417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b0a82597b25964489e669d60e06a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1990318567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,7 +3168,7 @@ PrefabInstance:
     - target: {fileID: 8350646145992175611, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
       propertyPath: tempoTransicaoPreto
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8350646145992175611, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}

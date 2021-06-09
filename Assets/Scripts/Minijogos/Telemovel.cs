@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Telemovel : MonoBehaviour
 {
     [SerializeField] float TempoTransporte = 2;
+    [SerializeField] bool Rodar = false;
     
     float Tempo = 0f;
     bool Transporte = false;

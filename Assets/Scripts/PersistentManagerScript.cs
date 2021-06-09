@@ -56,7 +56,7 @@ public class PersistentManagerScript : MonoBehaviour
     public void InstanciaUrso()
     {
         PortalLabDesativado = true;
-        Update();
+        FixedUpdate();
         Instantiate(Urso, PosUrso.transform.position, PosUrso.transform.rotation);
         Instantiate(Luz2, PosLuz2.transform.position, PosLuz2.transform.rotation);
     }
@@ -64,7 +64,7 @@ public class PersistentManagerScript : MonoBehaviour
     public void InstanciaPapeis()
     {
         PortalPassDesativado = true;
-        Update();
+        FixedUpdate();
         Instantiate(Papeis, PosPapel.transform.position, PosPapel.transform.rotation);
         Instantiate(Luz1, PosLuz1.transform.position, PosLuz1.transform.rotation);
     }
@@ -72,12 +72,12 @@ public class PersistentManagerScript : MonoBehaviour
     public void InstanciaTelemovel()
     {
         PortalMinDesativado = true;
-        Update();
+        FixedUpdate();
         Instantiate(Telemovel, PosTelemovel.transform.position, PosTelemovel.transform.rotation);
         Instantiate(Luz3, PosLuz3.transform.position, PosLuz3.transform.rotation);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (PortalPassDesativado == true)
         {
