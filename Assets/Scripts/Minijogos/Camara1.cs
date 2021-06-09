@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Camara1 : MonoBehaviour
 {
-    [SerializeField] Camera jogador;
+    [SerializeField] GameObject jogador;
 
-    [SerializeField] Camera camara1;
-    [SerializeField] Camera camara2;
+    [SerializeField] GameObject camara1;
+    [SerializeField] GameObject camara2;
 
     [SerializeField] GameObject objeto1;
     [SerializeField] GameObject objeto2;
@@ -21,27 +21,29 @@ public class Camara1 : MonoBehaviour
         objeto1.GetComponent<RotacaoObjeto1>().enabled = false;
         objeto2.GetComponent<RotacaoObjeto2>().enabled = false;
 
-        jogador.enabled = true;
-        camara1.enabled = false;
-        camara2.enabled = false;
+        jogador.GetComponent<Camera>().enabled = true;
+        camara1.GetComponent<Camera>().enabled = false;
+        camara2.GetComponent<Camera>().enabled = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Rotacao1") && Input.GetKeyDown(KeyCode.E) && MudarCamara1 == false)
         {
-            objeto1.GetComponent<RotacaoObjeto1>().enabled = true;
             MudarCamara1 = true;
-            jogador.enabled = !jogador.enabled;
-            camara1.enabled = !camara1.enabled;
+            jogador.GetComponent<Camera>().enabled = false;
+            camara1.GetComponent<Camera>().enabled = true;
+
+            objeto1.GetComponent<RotacaoObjeto1>().enabled = true;
         }
 
         if (other.CompareTag("Rotacao2") && Input.GetKeyDown(KeyCode.E) && MudarCamara2 == false)
         {
-            objeto2.GetComponent<RotacaoObjeto2>().enabled = true;
             MudarCamara2 = true;
-            jogador.enabled = !jogador.enabled;
-            camara2.enabled = !camara2.enabled;
+            jogador.GetComponent<Camera>().enabled = false;
+            camara2.GetComponent<Camera>().enabled = true;
+
+            objeto2.GetComponent<RotacaoObjeto2>().enabled = true;
         }
     }
 }

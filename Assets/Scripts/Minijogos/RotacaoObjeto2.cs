@@ -20,7 +20,7 @@ public class RotacaoObjeto2 : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-        transform.Rotate((Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime),
+        ObjetoImpossivel.transform.Rotate((Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime),
          (Input.GetAxis("Mouse Y") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
         }
 
