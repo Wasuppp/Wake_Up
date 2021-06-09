@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Jogador : MonoBehaviour
 {
-    [SerializeField] PersistentManagerScript PersistentManagerScript;
-
     private float Tempo = 0f;
 
     [SerializeField] float TempoEsperaTransporte = 2f;
@@ -52,21 +50,6 @@ public class Jogador : MonoBehaviour
             other.GetComponent<AudioSource>().Play();
         }
 
-    }
-
-    public void TransporteLabirinto()
-    {
-        SceneManager.LoadScene("Cubo_Labirinto");
-    }
-
-    public void TransportePassagens()
-    {
-        SceneManager.LoadScene("Passagens");
-    }
-
-    public void TranporteMinijogos()
-    {
-        SceneManager.LoadScene("Minijogos");
     }
 
     void FadeToBlack()

@@ -12,15 +12,15 @@ public class PortalMinijogos : MonoBehaviour
     float Tempo = 0f;
 
     bool DentroPortalMin = false;
-    bool BloquearNivelLabirinto = false;
+    bool BloquearNivelMinijogos= false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             DentroPortalMin= true;
-            BloquearNivelLabirinto = true;
-            PersistentManagerScript.InstanciaPapeis();
+            BloquearNivelMinijogos = true;
+            PersistentManagerScript.InstanciaTelemovel();
         }
     }
 
@@ -32,7 +32,7 @@ public class PortalMinijogos : MonoBehaviour
 
             if (Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
             {
-                SceneManager.LoadScene("Passagens");
+                SceneManager.LoadScene("Minijogos");
                 DentroPortalMin = false;
             }
         }

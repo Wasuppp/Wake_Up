@@ -20,7 +20,7 @@ public class PortalLabirinto : MonoBehaviour
         {
             DentroPortalLab = true;
             BloquearNivelLabirinto = true;
-            PersistentManagerScript.InstanciaPapeis();
+            PersistentManagerScript.InstanciaUrso();
         }
     }
 
@@ -32,7 +32,7 @@ public class PortalLabirinto : MonoBehaviour
 
             if (Tempo >= TempoEsperaTransporte) // se o jogador estiver dentro do portal mais de 2 segundos, é teletransportado para o nivel
             {
-                SceneManager.LoadScene("Passagens");
+                SceneManager.LoadScene("Cubo_Labirinto");
                 DentroPortalLab = false;
             }
         }
