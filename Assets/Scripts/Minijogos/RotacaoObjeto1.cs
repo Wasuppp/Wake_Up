@@ -35,9 +35,9 @@ public class RotacaoObjeto1 : MonoBehaviour
 
             //Y = 0,8620924
             //Y = 134.5
+            //225,2688
 
-            if ((ObjetoImpossivel.transform.localRotation.y > 0.861f && ObjetoImpossivel.transform.localRotation.y < 0.863f)||
-                (ObjetoImpossivel.transform.localRotation.y < -0.861f && ObjetoImpossivel.transform.localRotation.y > -0.863f))
+            if ((ObjetoImpossivel.transform.eulerAngles.y > 225.1f && ObjetoImpossivel.transform.eulerAngles.y < 225.32f))
 
             {
 
@@ -47,7 +47,7 @@ public class RotacaoObjeto1 : MonoBehaviour
 
                 if (Tempo > TempoEspera)
                 {
-                    ControladorCamara.Desativa();
+                    ControladorCamara.Desativa1();
                     this.enabled = false;
                     RotacaoCerta1 = false;
                 }

@@ -33,10 +33,8 @@ public class RotacaoObjeto2 : MonoBehaviour
                 ObjetoImpossivel.transform.Rotate(0, (Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
             }
 
-            //-0,4899118     
-
-            if ((ObjetoImpossivel.transform.localRotation.y > 0.487f && ObjetoImpossivel.transform.localRotation.y < 0.50f) ||
-            (ObjetoImpossivel.transform.localRotation.y < -0.487f && ObjetoImpossivel.transform.localRotation.y > -0.50f))
+            // 58,75087
+            if ((ObjetoImpossivel.transform.eulerAngles.y > 58.5f && ObjetoImpossivel.transform.eulerAngles.y < 58.95f))
 
             {
                 RotacaoCerta2 = true;
@@ -44,7 +42,7 @@ public class RotacaoObjeto2 : MonoBehaviour
 
                 if (Tempo > TempoEspera)
                 {
-                    ControladorCamara.Desativa();
+                    ControladorCamara.Desativa2();
                     this.enabled = false;
                     RotacaoCerta2 = false;
                 }

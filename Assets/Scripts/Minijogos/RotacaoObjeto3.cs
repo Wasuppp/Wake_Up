@@ -34,17 +34,16 @@ public class RotacaoObjeto3 : MonoBehaviour
                 ObjetoImpossivel.transform.Rotate(0, (Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
             }
 
-            //-0,9383985   
+            //211,9953 
 
-            if ((ObjetoImpossivel.transform.localRotation.y > 0.92f && ObjetoImpossivel.transform.localRotation.y < 0.945f) ||
-            (ObjetoImpossivel.transform.localRotation.y < -0.92f && ObjetoImpossivel.transform.localRotation.y > -0.945f))
+            if (ObjetoImpossivel.transform.eulerAngles.y > 211.6f && ObjetoImpossivel.transform.eulerAngles.y < 212.2f)
             {
                 RotacaoCerta3 = true;
                 Tempo += Time.deltaTime;
 
                 if (Tempo > TempoEspera)
                 {
-                    ControladorCamara.Desativa();
+                    ControladorCamara.Desativa3();
                     this.enabled = false;
                     RotacaoCerta3 = false;                    
                 }

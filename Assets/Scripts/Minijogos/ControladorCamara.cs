@@ -72,7 +72,6 @@ public class ControladorCamara : MonoBehaviour
             CamaraJogador.enabled = false;
 
             MudarCamara1 = false;
-            AcabaJogo1 = true;
 
         }
 
@@ -87,7 +86,6 @@ public class ControladorCamara : MonoBehaviour
             CamaraJogador.enabled = false;
 
             MudarCamara2 = false;
-            AcabaJogo2 = true;
 
         }
 
@@ -102,26 +100,51 @@ public class ControladorCamara : MonoBehaviour
             CamaraJogador.enabled = false;
 
             MudarCamara3 = false;
-            AcabaJogo3 = true;
 
         }
 
         if (AcabaJogo1==true && AcabaJogo2==true && AcabaJogo3 == true)
         {
+            AcabaJogo1 = false;
             ControladorEscadas.AnimarEscadas();
-            Debug.Log(" Escvadas");
+            Debug.Log("ativa escadas");
         }
     }
 
-    public void Desativa() // o jogador terminou um dos jogos e volta à camara do player
+    public void Desativa1() // o jogador terminou um dos jogos e volta à camara do player
     {
+        AcabaJogo1 = true;
+
         Jogador.SetActive(true);
         CamaraJogador.enabled = true;
 
         CamaraParent3.SetActive(false);
         CamaraParent1.SetActive(false);
         CamaraParent2.SetActive(false);
-        Debug.Log("Desativa Cmaara");
+    }
+
+    public void Desativa2() // o jogador terminou um dos jogos e volta à camara do player
+    {
+        AcabaJogo2 = true;
+
+        Jogador.SetActive(true);
+        CamaraJogador.enabled = true;
+
+        CamaraParent3.SetActive(false);
+        CamaraParent1.SetActive(false);
+        CamaraParent2.SetActive(false);
+    }
+
+    public void Desativa3() // o jogador terminou um dos jogos e volta à camara do player
+    {
+        AcabaJogo3 = true;
+
+        Jogador.SetActive(true);
+        CamaraJogador.enabled = true;
+
+        CamaraParent3.SetActive(false);
+        CamaraParent1.SetActive(false);
+        CamaraParent2.SetActive(false);
     }
 
 }

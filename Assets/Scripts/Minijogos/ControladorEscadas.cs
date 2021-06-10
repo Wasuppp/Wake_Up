@@ -10,6 +10,8 @@ public class ControladorEscadas : MonoBehaviour
     bool EntramEscadas = false;
     float Tempo = 0f;
 
+    bool Animarescadas = false;
+
     private void Start()
     {
         AnimacaoEscadas= GetComponent<Animator>();
@@ -17,21 +19,21 @@ public class ControladorEscadas : MonoBehaviour
 
     public void AnimarEscadas()
     {
-        AnimacaoEscadas.SetBool("Trigger", true);
-        EntramEscadas = true;
+        AnimacaoEscadas.SetBool("Ativar", true);
+        Animarescadas = true;
     }
 
     private void Update()
     {
-        if (EntramEscadas == true)
+        if (Animarescadas == true)
         {
             Tempo += Time.deltaTime;
 
             if (Tempo > 2f)
             {
-                AnimacaoEscadas.SetBool("Trigger", false);
-                EntramEscadas = false;
+                AnimacaoEscadas.SetBool("Ativar", false);
             }
         }
     }
+
 }
