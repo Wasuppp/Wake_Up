@@ -26,40 +26,48 @@ public class ControladorCamara : MonoBehaviour
 
         camara1.GetComponent<AudioListener>().enabled = false; // apenas o AudioListener do jogador é ativado
         camara2.GetComponent<AudioListener>().enabled = false;
-
     }
 
-    public void AtivaObjeto1 (bool Camara1)
+    public void AtivaObjeto1 ()
     {
-        MudarCamara1 = Camara1; // recebe o estado da camara 1 
+        MudarCamara1 = true; // recebe o estado da camara 1 
     }
 
-    public void AtivaObjeto2(bool Camara2)
+    public void AtivaObjeto2()
     {
-        MudarCamara2 = Camara2; // recebe o estado da camara 2
+        MudarCamara2 = true; // recebe o estado da camara 2
     }
 
     private void Update()
     {
+        if (MudarCamara2 == true)
+        {
+            Debug.Log("Muda camara 2");
+
+            camara2.enabled = true; // a camara 2 é ativada
+            jogador.enabled = false;
+
+            MudarCamara2 = false;
+        }
+
         if (MudarCamara1 == true) 
         {
             camara1.enabled = true; // a camara 1 é ativada
             jogador.enabled = false;
-            camara2.enabled = false;
 
             MudarCamara1 = false; 
-
-        } else if (MudarCamara2 == true)
-        {
-            camara2.enabled = true; // a camara 2 é ativada
-            jogador.enabled = false;
-            camara1.enabled = false;
-
-            MudarCamara2 = false;
         }
+
     }
 
-    public void Desativa() // o jogador terminou um dos jogos e volta à camara do player
+    public void Desativa1() // o jogador terminou um dos jogos e volta à camara do player
+    {
+        jogador.enabled = true;
+        camara1.enabled = false;
+        camara2.enabled = false;
+    }
+
+    public void Desativa2()
     {
         jogador.enabled = true;
         camara1.enabled = false;

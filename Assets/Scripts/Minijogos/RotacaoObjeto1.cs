@@ -36,7 +36,7 @@ public class RotacaoObjeto1 : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                ControladorCamara.Desativa();
+                ControladorCamara.Desativa1();
                 this.enabled = false;
             }
         }
