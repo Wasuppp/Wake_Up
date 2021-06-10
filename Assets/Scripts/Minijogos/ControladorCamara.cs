@@ -4,28 +4,35 @@ using UnityEngine;
 
 public class ControladorCamara : MonoBehaviour
 {
-    [SerializeField] Camera jogador;
+    [SerializeField] GameObject Jogador;
+    [SerializeField] Camera CamaraJogador;
 
     [SerializeField] Camera camara1;
-    [SerializeField] Camera camara2;
-
     [SerializeField] GameObject objeto1;
-    [SerializeField] GameObject objeto2;
-
     [SerializeField] RotacaoObjeto1 RotacaoObjeto1;
+    [SerializeField] GameObject CamaraParent1;
+
+    [SerializeField] Camera camara2;
+    [SerializeField] GameObject objeto2;
     [SerializeField] RotacaoObjeto2 RotacaoObjeto2;
+    [SerializeField] GameObject CamaraParent2;
+
+    [SerializeField] Camera camara3;
+    [SerializeField] GameObject objeto3;
+    [SerializeField] RotacaoObjeto3 RotacaoObjeto3;
+    [SerializeField] GameObject CamaraParent3;
 
     bool MudarCamara1 = false;
     bool MudarCamara2 = false;
+    bool MudarCamara3 = false;
 
     void  Start()
     {
-        jogador.enabled = true;  // a cena inicia com a camara do jogador ativada
+        CamaraJogador.enabled = true;  // a cena inicia com a camara do jogador ativada
         camara1.enabled = false;
         camara2.enabled = false;
+        camara3.enabled = false;
 
-        camara1.GetComponent<AudioListener>().enabled = false; // apenas o AudioListener do jogador é ativado
-        camara2.GetComponent<AudioListener>().enabled = false;
     }
 
     public void AtivaObjeto1 ()
@@ -38,39 +45,64 @@ public class ControladorCamara : MonoBehaviour
         MudarCamara2 = true; // recebe o estado da camara 2
     }
 
+    public void AtivaObjeto3()
+    {
+        MudarCamara3 = true;
+    }
+
     private void Update()
     {
-        if (MudarCamara2 == true)
-        {
-            Debug.Log("Muda camara 2");
-
-            camara2.enabled = true; // a camara 2 é ativada
-            jogador.enabled = false;
-
-            MudarCamara2 = false;
-        }
-
         if (MudarCamara1 == true) 
         {
-            camara1.enabled = true; // a camara 1 é ativada
-            jogador.enabled = false;
+            Jogador.SetActive(false);
+            CamaraParent1.SetActive(true);
+            CamaraParent2.SetActive(false);
+            CamaraParent3.SetActive(false);
 
-            MudarCamara1 = false; 
+            camara1.enabled = true; // a camara 1 é ativada
+            CamaraJogador.enabled = false;
+
+            MudarCamara1 = false;
+
         }
 
+        if (MudarCamara2 == true)
+        {
+            Jogador.SetActive(false);
+            CamaraParent2.SetActive(true);
+            CamaraParent1.SetActive(false);
+            CamaraParent3.SetActive(false);
+
+            camara2.enabled = true; // a camara 2 é ativada
+            CamaraJogador.enabled = false;
+
+            MudarCamara2 = false;
+
+        }
+
+        if (MudarCamara3 == true)
+        {
+            Jogador.SetActive(false);
+            CamaraParent3.SetActive(true);
+            CamaraParent1.SetActive(false);
+            CamaraParent2.SetActive(false);
+
+            camara3.enabled = true; // a camara 2 é ativada
+            CamaraJogador.enabled = false;
+
+            MudarCamara2 = false;
+
+        }
     }
 
-    public void Desativa1() // o jogador terminou um dos jogos e volta à camara do player
+    public void Desativa() // o jogador terminou um dos jogos e volta à camara do player
     {
-        jogador.enabled = true;
-        camara1.enabled = false;
-        camara2.enabled = false;
+        CamaraParent3.SetActive(false);
+        CamaraParent1.SetActive(false);
+        CamaraParent2.SetActive(false);
+
+        Jogador.SetActive(true);
+        CamaraJogador.enabled = true;
     }
 
-    public void Desativa2()
-    {
-        jogador.enabled = true;
-        camara1.enabled = false;
-        camara2.enabled = false;
-    }
 }

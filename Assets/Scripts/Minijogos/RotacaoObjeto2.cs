@@ -7,10 +7,9 @@ public class RotacaoObjeto2 : MonoBehaviour
     [SerializeField] Camera jogador;
 
     [SerializeField] Camera camara2;
-
-    bool Xcorreto = false;
-    bool Ycorreto = false;
-    bool Zcorreto = false;
+    [SerializeField] float TempoEspera;
+    float Tempo = 0f;
+    bool RotacaoCerta = false;
 
     [SerializeField] GameObject ObjetoImpossivel;
 
@@ -29,15 +28,26 @@ public class RotacaoObjeto2 : MonoBehaviour
     {
         if (Objeto2Ativado == true)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && RotacaoCerta == false)
             {
                 ObjetoImpossivel.transform.Rotate(0, (Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
             }
 
-            if (Input.GetKeyDown(KeyCode.F))
+            //-0,4899118     
+
+            if ((ObjetoImpossivel.transform.localRotation.y > 0.485f && ObjetoImpossivel.transform.localRotation.y < 0.50f) ||
+            (ObjetoImpossivel.transform.localRotation.y < -0.485f && ObjetoImpossivel.transform.localRotation.y > -0.50f))
+
             {
-                ControladorCamara.Desativa2();
-                this.enabled = false;
+                RotacaoCerta = true;
+                Tempo += Time.deltaTime;
+
+                if (Tempo > TempoEspera)
+                {
+                    ControladorCamara.Desativa();
+                    this.enabled = false;
+                    RotacaoCerta = false;
+                }
             }
         }
 

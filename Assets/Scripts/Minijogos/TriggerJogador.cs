@@ -8,12 +8,15 @@ public class TriggerJogador : MonoBehaviour
 
     [SerializeField] Camera camara1;
     [SerializeField] Camera camara2;
+    [SerializeField] Camera camara3;
 
     [SerializeField] RotacaoObjeto1 RotacaoObjeto1;
     [SerializeField] RotacaoObjeto2 RotacaoObjeto2;
+    [SerializeField] RotacaoObjeto3 RotacaoObjeto3;
 
     public bool Camara1 = false;
     public bool Camara2 = false;
+    public bool Camara3 = false;
 
     private void OnTriggerStay(Collider other)
     {
@@ -33,6 +36,15 @@ public class TriggerJogador : MonoBehaviour
             Camara2 = true;
             ControladorCamara.AtivaObjeto2(); // transporta o estado da camara 2 para o controlador de camara
             RotacaoObjeto2.AtivaScript2(); // o script de rotação do objeto 2 é ativado    
+        }
+
+        if (other.CompareTag("Rotacao3") && Input.GetKeyDown(KeyCode.E) && Camara3 == false)
+        {
+            // o jogador entra no trigger do objeto 2 (cubo impossivel)
+
+            Camara3 = true;
+            ControladorCamara.AtivaObjeto3(); // transporta o estado da camara 2 para o controlador de camara
+            RotacaoObjeto3.AtivaScript3(); // o script de rotação do objeto 2 é ativado    
         }
     }
 }
