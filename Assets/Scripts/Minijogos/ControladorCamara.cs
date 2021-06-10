@@ -12,41 +12,57 @@ public class ControladorCamara : MonoBehaviour
     [SerializeField] GameObject objeto1;
     [SerializeField] GameObject objeto2;
 
+    [SerializeField] RotacaoObjeto1 RotacaoObjeto1;
+    [SerializeField] RotacaoObjeto2 RotacaoObjeto2;
+
     bool MudarCamara1 = false;
     bool MudarCamara2 = false;
-    bool MudarCamara3 = false;
 
     void  Start()
     {
-        Debug.Log("Camara Jogador");
-
-        jogador.enabled = true;
+        jogador.enabled = true;  // a cena inicia com a camara do jogador ativada
         camara1.enabled = false;
         camara2.enabled = false;
 
-        objeto1.GetComponent<RotacaoObjeto1>().enabled = false;
-        objeto2.GetComponent<RotacaoObjeto2>().enabled = false;
+        camara1.GetComponent<AudioListener>().enabled = false; // apenas o AudioListener do jogador é ativado
+        camara2.GetComponent<AudioListener>().enabled = false;
 
     }
 
-    private void OnTriggerStay(Collider other)
+    public void AtivaObjeto1 (bool Camara1)
     {
-        if (other.CompareTag("Rotacao1") && Input.GetKeyDown(KeyCode.E) && MudarCamara1 == false)
+        MudarCamara1 = Camara1; // recebe o estado da camara 1 
+    }
+
+    public void AtivaObjeto2(bool Camara2)
+    {
+        MudarCamara2 = Camara2; // recebe o estado da camara 2
+    }
+
+    private void Update()
+    {
+        if (MudarCamara1 == true) 
         {
-            MudarCamara1 = true;
-            jogador.GetComponent<Camera>().enabled = false;
-            camara1.GetComponent<Camera>().enabled = true;
+            camara1.enabled = true; // a camara 1 é ativada
+            jogador.enabled = false;
+            camara2.enabled = false;
 
-            objeto1.GetComponent<RotacaoObjeto1>().enabled = true;
-        }
+            MudarCamara1 = false; 
 
-        if (other.CompareTag("Rotacao2") && Input.GetKeyDown(KeyCode.E) && MudarCamara2 == false)
+        } else if (MudarCamara2 == true)
         {
-            MudarCamara2 = true;
-            jogador.GetComponent<Camera>().enabled = false;
-            camara2.GetComponent<Camera>().enabled = true;
+            camara2.enabled = true; // a camara 2 é ativada
+            jogador.enabled = false;
+            camara1.enabled = false;
 
-            objeto2.GetComponent<RotacaoObjeto2>().enabled = true;
+            MudarCamara2 = false;
         }
+    }
+
+    public void Desativa() // o jogador terminou um dos jogos e volta à camara do player
+    {
+        jogador.enabled = true;
+        camara1.enabled = false;
+        camara2.enabled = false;
     }
 }

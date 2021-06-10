@@ -365,6 +365,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: "TrianguloImposs\xEDvel"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40f64bf25004ceb46a01762bd701d574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40f64bf25004ceb46a01762bd701d574,
+        type: 3}
+      propertyPath: m_TagString
+      value: Rotacao1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f64bf25004ceb46a01762bd701d574, type: 3}
 --- !u!1 &330583207 stripped
@@ -382,14 +392,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 330583207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077e8fa9268e9d846bc465f1ab5112e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9996aa35fe2fd744894a0a5b32b62ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jogador: {fileID: 1316104679}
-  camara1: {fileID: 8350646147641762498}
-  camara2: {fileID: 2380394786725229631}
-  objeto1: {fileID: 1079834708}
-  objeto2: {fileID: 7964067440082976909}
+  ControladorCamara: {fileID: 1667745565}
+  RotacaoObjeto1: {fileID: 8350646147641762499}
+  RotacaoObjeto2: {fileID: 2380394786725229633}
 --- !u!1 &370231289
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +582,7 @@ Transform:
   m_LocalScale: {x: 5, y: 10, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &403218290
 GameObject:
@@ -1339,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 474666145987252344, guid: c5722b4ccfb422f4da40960af4edffe0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 474666145987252344, guid: c5722b4ccfb422f4da40960af4edffe0,
         type: 3}
@@ -1488,6 +1496,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 98628895}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1079834710
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079834708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: -0.025}
 --- !u!1 &1148717241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,14 +1719,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1316104679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8350646145992175608, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1990815414}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1335964950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2304,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363df711e252cdf4bb644c20605189a6, type: 3}
+--- !u!1 &1667745564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667745566}
+  - component: {fileID: 1667745565}
+  m_Layer: 0
+  m_Name: ControladorCamara
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1667745565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667745564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077e8fa9268e9d846bc465f1ab5112e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogador: {fileID: 537038842}
+  camara1: {fileID: 8350646147642351840}
+  camara2: {fileID: 2380394786724902429}
+  objeto1: {fileID: 1079834708}
+  objeto2: {fileID: 7964067440082976909}
+  RotacaoObjeto1: {fileID: 8350646147641762499}
+  RotacaoObjeto2: {fileID: 2380394786725229633}
+--- !u!4 &1667745566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667745564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6900711, y: 15.7136, z: -205.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1701608392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,7 +2724,7 @@ RectTransform:
   - {fileID: 1885904639}
   - {fileID: 2061173477}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2676,7 +2741,7 @@ PrefabInstance:
     - target: {fileID: 8350646145985632794, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
       propertyPath: m_MouseLook.clampVerticalRotation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8350646145992175610, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
@@ -2686,7 +2751,7 @@ PrefabInstance:
     - target: {fileID: 8350646145992175610, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
       propertyPath: m_TagString
-      value: MainCamera
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8350646145992175611, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
@@ -3956,7 +4021,7 @@ GameObject:
   - component: {fileID: 2380394786725229632}
   - component: {fileID: 2380394786725229633}
   m_Layer: 0
-  m_Name: FirstPersonCharacter
+  m_Name: FirstPersonCharacter2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4009,8 +4074,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jogador: {fileID: 537038842}
-  camara2: {fileID: 8350646147642351840}
+  camara2: {fileID: 2380394786724902429}
   ObjetoImpossivel: {fileID: 7964067440082976909}
+  ControladorCamara: {fileID: 1667745565}
 --- !u!4 &2380394786725390365
 Transform:
   m_ObjectHideFlags: 0
@@ -5348,7 +5414,7 @@ GameObject:
   - component: {fileID: 1914268296}
   - component: {fileID: 8350646147641762499}
   m_Layer: 0
-  m_Name: FirstPersonCharacter
+  m_Name: FirstPersonCharacter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5369,7 +5435,8 @@ MonoBehaviour:
   jogador: {fileID: 537038842}
   camara1: {fileID: 8350646147642351840}
   ObjetoImpossivel: {fileID: 1079834708}
-  VelocidadeRotacao: 10
+  VelocidadeRotacao: 20
+  ControladorCamara: {fileID: 1667745565}
 --- !u!4 &8350646147641802464
 Transform:
   m_ObjectHideFlags: 0

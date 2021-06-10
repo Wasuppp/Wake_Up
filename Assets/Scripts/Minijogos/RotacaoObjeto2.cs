@@ -16,18 +16,31 @@ public class RotacaoObjeto2 : MonoBehaviour
 
     float VelocidadeRotacao = 20f;
 
+    bool Objeto2Ativado = false;
+
+    [SerializeField] ControladorCamara ControladorCamara;
+     
+    public void AtivaScript2()
+    {
+        Objeto2Ativado = true;
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Objeto2Ativado == true)
         {
-        ObjetoImpossivel.transform.Rotate((Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime),
-         (Input.GetAxis("Mouse Y") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
+            if (Input.GetMouseButton(0))
+            {
+            ObjetoImpossivel.transform.Rotate((Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime),
+             (Input.GetAxis("Mouse Y") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                ControladorCamara.Desativa();
+                this.enabled = false;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            camara2.enabled = !camara2.enabled;
-            jogador.enabled = !jogador.enabled;
-        }
     }
 }
