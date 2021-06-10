@@ -60,26 +60,26 @@ public class PersistentManagerScript : MonoBehaviour
 
     public void InstanciaUrso()
     {
-        PortalLabDesativado = true;
-        FixedUpdate();
         Instantiate(Urso, PosUrso.transform.position, PosUrso.transform.rotation);
         Instantiate(Luz2, PosLuz2.transform.position, PosLuz2.transform.rotation);
+        PortalLabDesativado = true;
+        FixedUpdate();
     }
 
     public void InstanciaPapeis()
     {
-        PortalPassDesativado = true;
-        FixedUpdate();
         Instantiate(Papeis, PosPapel.transform.position, PosPapel.transform.rotation);
         Instantiate(Luz1, PosLuz1.transform.position, PosLuz1.transform.rotation);
+        PortalPassDesativado = true;
+        FixedUpdate();
     }
 
     public void InstanciaTelemovel()
     {
-        PortalMinDesativado = true;
-        FixedUpdate();
         Instantiate(Telemovel, PosTelemovel.transform.position, PosTelemovel.transform.rotation);
         Instantiate(Luz3, PosLuz3.transform.position, PosLuz3.transform.rotation);
+        PortalMinDesativado = true;
+        FixedUpdate();
     }
 
     void FixedUpdate()
@@ -102,8 +102,9 @@ public class PersistentManagerScript : MonoBehaviour
             PortalM.GetComponent<MeshRenderer>().material = PortalDesativado;
         }
 
-        if (PortalLabDesativado == true && PortalLabDesativado == true && PortalMinDesativado == true && CuboFinalInstanciado == false)
+        if (PortalLabDesativado == true && PortalPassDesativado == true && PortalMinDesativado == true && CuboFinalInstanciado == false)
         {
+            Debug.Log("Cubo-Final");
             Instantiate(CuboFinal, PosCuboFinal.transform.position, PosCuboFinal.transform.rotation);
             CuboFinalInstanciado = true;
         }

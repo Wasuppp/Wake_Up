@@ -24,17 +24,17 @@ public class Papeis : MonoBehaviour
         {
             transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
 
-            if (Transporte == true)
-            {
-                Tempo += Time.deltaTime;
-
-                if (Tempo > TempoTransporte)
-                {
-                    MudarCena();
-                }
-        
         }
-}
+
+        if (Transporte == true)
+        {
+            Tempo += Time.deltaTime;
+
+            if (Tempo > TempoTransporte)
+            {
+                MudarCena();
+            }
+        }      
     }
 
     public void MudarCena()

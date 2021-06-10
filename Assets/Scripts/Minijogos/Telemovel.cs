@@ -20,7 +20,11 @@ public class Telemovel : MonoBehaviour
     }
     void Update()
     {
-        transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
+        if (Rodar == true)
+        {
+            transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
+        }
+
 
         if (Transporte == true)
         {
