@@ -32,6 +32,9 @@ public class ControladorCamara : MonoBehaviour
         camara1.enabled = false;
         camara2.enabled = false;
         camara3.enabled = false;
+        CamaraParent3.SetActive(false);
+        CamaraParent1.SetActive(false);
+        CamaraParent2.SetActive(false);
 
     }
 
@@ -90,19 +93,20 @@ public class ControladorCamara : MonoBehaviour
             camara3.enabled = true; // a camara 2 é ativada
             CamaraJogador.enabled = false;
 
-            MudarCamara2 = false;
+            MudarCamara3 = false;
 
         }
     }
 
     public void Desativa() // o jogador terminou um dos jogos e volta à camara do player
     {
+        Jogador.SetActive(true);
+        CamaraJogador.enabled = true;
+
         CamaraParent3.SetActive(false);
         CamaraParent1.SetActive(false);
         CamaraParent2.SetActive(false);
-
-        Jogador.SetActive(true);
-        CamaraJogador.enabled = true;
+        Debug.Log("Desativa Cmaara");
     }
 
 }
