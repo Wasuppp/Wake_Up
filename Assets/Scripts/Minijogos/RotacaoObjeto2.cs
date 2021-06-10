@@ -35,8 +35,8 @@ public class RotacaoObjeto2 : MonoBehaviour
 
             //-0,4899118     
 
-            if ((ObjetoImpossivel.transform.localRotation.y > 0.485f && ObjetoImpossivel.transform.localRotation.y < 0.50f) ||
-            (ObjetoImpossivel.transform.localRotation.y < -0.485f && ObjetoImpossivel.transform.localRotation.y > -0.50f))
+            if ((ObjetoImpossivel.transform.localRotation.y > 0.487f && ObjetoImpossivel.transform.localRotation.y < 0.50f) ||
+            (ObjetoImpossivel.transform.localRotation.y < -0.487f && ObjetoImpossivel.transform.localRotation.y > -0.50f))
 
             {
                 RotacaoCerta2 = true;

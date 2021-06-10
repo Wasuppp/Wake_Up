@@ -22,9 +22,15 @@ public class ControladorCamara : MonoBehaviour
     [SerializeField] RotacaoObjeto3 RotacaoObjeto3;
     [SerializeField] GameObject CamaraParent3;
 
+    [SerializeField] ControladorEscadas ControladorEscadas;
+
     bool MudarCamara1 = false;
     bool MudarCamara2 = false;
     bool MudarCamara3 = false;
+
+    bool AcabaJogo1 = false;
+    bool AcabaJogo2 = false;
+    bool AcabaJogo3 = false;
 
     void  Start()
     {
@@ -66,6 +72,7 @@ public class ControladorCamara : MonoBehaviour
             CamaraJogador.enabled = false;
 
             MudarCamara1 = false;
+            AcabaJogo1 = true;
 
         }
 
@@ -80,6 +87,7 @@ public class ControladorCamara : MonoBehaviour
             CamaraJogador.enabled = false;
 
             MudarCamara2 = false;
+            AcabaJogo2 = true;
 
         }
 
@@ -94,7 +102,14 @@ public class ControladorCamara : MonoBehaviour
             CamaraJogador.enabled = false;
 
             MudarCamara3 = false;
+            AcabaJogo3 = true;
 
+        }
+
+        if (AcabaJogo1==true && AcabaJogo2==true && AcabaJogo3 == true)
+        {
+            ControladorEscadas.AnimarEscadas();
+            Debug.Log(" Escvadas");
         }
     }
 
