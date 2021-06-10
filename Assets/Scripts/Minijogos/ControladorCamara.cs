@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camara1 : MonoBehaviour
+public class ControladorCamara : MonoBehaviour
 {
-    [SerializeField] GameObject jogador;
+    [SerializeField] Camera jogador;
 
-    [SerializeField] GameObject camara1;
-    [SerializeField] GameObject camara2;
+    [SerializeField] Camera camara1;
+    [SerializeField] Camera camara2;
 
     [SerializeField] GameObject objeto1;
     [SerializeField] GameObject objeto2;
@@ -18,12 +18,15 @@ public class Camara1 : MonoBehaviour
 
     void  Start()
     {
+        Debug.Log("Camara Jogador");
+
+        jogador.enabled = true;
+        camara1.enabled = false;
+        camara2.enabled = false;
+
         objeto1.GetComponent<RotacaoObjeto1>().enabled = false;
         objeto2.GetComponent<RotacaoObjeto2>().enabled = false;
 
-        jogador.GetComponent<Camera>().enabled = true;
-        camara1.GetComponent<Camera>().enabled = false;
-        camara2.GetComponent<Camera>().enabled = false;
     }
 
     private void OnTriggerStay(Collider other)

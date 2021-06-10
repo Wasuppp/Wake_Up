@@ -14,14 +14,13 @@ public class RotacaoObjeto1 : MonoBehaviour
 
     [SerializeField] GameObject ObjetoImpossivel;
 
-    float VelocidadeRotacao = 20f;
+    [SerializeField] float VelocidadeRotacao = 20f;
 
     private void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            ObjetoImpossivel.transform.Rotate((Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime),
-            (Input.GetAxis("Mouse Y") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
+            ObjetoImpossivel.transform.Rotate(0, (Input.GetAxis("Mouse X") * VelocidadeRotacao * Time.deltaTime), 0, Space.World);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
