@@ -41,7 +41,6 @@ public class ControladorEscadas : MonoBehaviour
     }
     void escadasSom()
     {
-
         escadassom.Play();
     }
 }

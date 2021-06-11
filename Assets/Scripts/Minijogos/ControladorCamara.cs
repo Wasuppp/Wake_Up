@@ -23,6 +23,7 @@ public class ControladorCamara : MonoBehaviour
     [SerializeField] GameObject CamaraParent3;
 
     [SerializeField] ControladorEscadas ControladorEscadas;
+    [SerializeField] Plataforma Plataforma;
 
     bool MudarCamara1 = false;
     bool MudarCamara2 = false;
@@ -107,7 +108,7 @@ public class ControladorCamara : MonoBehaviour
         {
             AcabaJogo1 = false;
             ControladorEscadas.AnimarEscadas();
-            Debug.Log("ativa escadas");
+            Plataforma.AnimarPlataforma();
         }
     }
 
