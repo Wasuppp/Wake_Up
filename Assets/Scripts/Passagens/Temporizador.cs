@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Temporizador : MonoBehaviour
 {
@@ -18,14 +19,14 @@ public class Temporizador : MonoBehaviour
 
     private void Update()
     {
-        if (TempoMaximo > 0f)
+        if (TempoRestante > 0f)
         {
             TempoRestante -= Time.deltaTime;
             BarraTempo.fillAmount = TempoRestante / TempoMaximo;
         }
         else
         {
-
+            SceneManager.LoadScene("Passagens");
         }
 
     }

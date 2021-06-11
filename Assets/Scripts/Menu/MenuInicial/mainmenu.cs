@@ -68,7 +68,7 @@ public class mainmenu : MonoBehaviour
 
     public void Menu()
     {
-        SceneManager.LoadScene("Main menu"); // muda a cena para creditos
+        SceneManager.LoadScene("Creditos"); // muda a cena para creditos
     }
     public void ExitGame()
     {

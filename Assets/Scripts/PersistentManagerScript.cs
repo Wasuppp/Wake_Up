@@ -110,6 +110,8 @@ public class PersistentManagerScript : MonoBehaviour
             Instantiate(CuboFinal, PosCuboFinal.transform.position, PosCuboFinal.transform.rotation);
             Instantiate(FogoParticulas, PosFogo.transform.position, PosFogo.transform.rotation);
             CuboFinalInstanciado = true;
+
+
         }
     }
 }
