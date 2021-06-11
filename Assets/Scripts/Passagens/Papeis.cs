@@ -39,7 +39,7 @@ public class Papeis : MonoBehaviour
 
     public void MudarCena()
     {
-        SceneManager.LoadScene("Sala_Principal");
+        SceneManager.LoadScene("CutscenePaper");
     }
 
 }

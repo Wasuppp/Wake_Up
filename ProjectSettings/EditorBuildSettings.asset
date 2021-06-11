@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniJogos.unity
     guid: 17415b3207a4a0549903a91e331b7fde
+  - enabled: 1
+    path: Assets/Scenes/CutsceneUrso.unity
+    guid: ba4b6d16f0e77ea4ab1219fc7a86a1f8
+  - enabled: 1
+    path: Assets/Scenes/CutsceneTele.unity
+    guid: a1b9d83bd4ce17a46b7b4af36a6a1291
+  - enabled: 1
+    path: Assets/Scenes/CutscenePaper.unity
+    guid: 2d19518df289b384081dd0af09a00f99
   m_configObjects: {}

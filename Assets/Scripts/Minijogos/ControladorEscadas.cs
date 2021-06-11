@@ -6,6 +6,7 @@ public class ControladorEscadas : MonoBehaviour
 {
     [SerializeField] GameObject PlataformaEscadas;
     Animator AnimacaoEscadas;
+    AudioSource escadassom;
 
     bool EntramEscadas = false;
     float Tempo = 0f;
@@ -15,12 +16,14 @@ public class ControladorEscadas : MonoBehaviour
     private void Start()
     {
         AnimacaoEscadas= GetComponent<Animator>();
+       escadassom = GetComponent<AudioSource>();
     }
 
     public void AnimarEscadas()
     {
         AnimacaoEscadas.SetBool("Ativar", true);
         Animarescadas = true;
+        escadasSom();
     }
 
     private void Update()
@@ -32,8 +35,13 @@ public class ControladorEscadas : MonoBehaviour
             if (Tempo > 2f)
             {
                 AnimacaoEscadas.SetBool("Ativar", false);
+                
             }
         }
     }
+    void escadasSom()
+    {
 
+        escadassom.Play();
+    }
 }

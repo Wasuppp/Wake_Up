@@ -428,7 +428,7 @@ MonoBehaviour:
   camara3: {fileID: 293505750}
   TempoEspera: 2
   ObjetoImpossivel: {fileID: 3205305449823155991}
-  VelocidadeRotacao: 40
+  VelocidadeRotacao: 80
   ControladorCamara: {fileID: 1667745565}
 --- !u!114 &293505746
 MonoBehaviour:
@@ -4493,7 +4493,7 @@ MonoBehaviour:
   camara2: {fileID: 2380394786724902429}
   TempoEspera: 2
   ObjetoImpossivel: {fileID: 771612042}
-  VelocidadeRotacao: 40
+  VelocidadeRotacao: 80
   ControladorCamara: {fileID: 1667745565}
 --- !u!4 &2380394786725390365
 Transform:
@@ -4615,6 +4615,7 @@ GameObject:
   - component: {fileID: 2923087181852901140}
   - component: {fileID: 2923087181852901141}
   - component: {fileID: 2923087181852901142}
+  - component: {fileID: 2923087181852901143}
   m_Layer: 0
   m_Name: Escadas
   m_TagString: Untagged
@@ -4668,6 +4669,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlataformaEscadas: {fileID: 2923087181852901139}
+--- !u!82 &2923087181852901143
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923087181852901139}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f5f47c5b690df5a47b186e36d11aa3b4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!33 &2924629408441750821
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5834,7 +5931,7 @@ MonoBehaviour:
   camara1: {fileID: 8350646147642351840}
   TempoEspera: 2
   ObjetoImpossivel: {fileID: 1079834708}
-  VelocidadeRotacao: 40
+  VelocidadeRotacao: 80
   ControladorCamara: {fileID: 1667745565}
 --- !u!4 &8350646147641802464
 Transform:

@@ -38,7 +38,7 @@ public class Urso : MonoBehaviour
 
     public void MudarCena()
     {
-        SceneManager.LoadScene("Sala_Principal");
+        SceneManager.LoadScene("CutsceneUrso");
     }
 
 }
