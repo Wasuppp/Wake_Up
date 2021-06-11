@@ -22,6 +22,9 @@ public class ControladorCamara : MonoBehaviour
     [SerializeField] RotacaoObjeto3 RotacaoObjeto3;
     [SerializeField] GameObject CamaraParent3;
 
+    [SerializeField] GameObject codigo1;
+    [SerializeField] GameObject codigo2;
+
     [SerializeField] ControladorEscadas ControladorEscadas;
     [SerializeField] Plataforma Plataforma;
 
@@ -35,6 +38,9 @@ public class ControladorCamara : MonoBehaviour
 
     void  Start()
     {
+        codigo1.SetActive(false);
+        codigo2.SetActive(false);
+
         CamaraJogador.enabled = true;  // a cena inicia com a camara do jogador ativada
         camara1.enabled = false;
         camara2.enabled = false;
@@ -109,6 +115,9 @@ public class ControladorCamara : MonoBehaviour
             AcabaJogo1 = false;
             ControladorEscadas.AnimarEscadas();
             Plataforma.AnimarPlataforma();
+            codigo1.SetActive(true);
+            codigo2.SetActive(true);
+
         }
     }
 

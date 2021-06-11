@@ -20,10 +20,11 @@ public class PaperCena : MonoBehaviour
         if (espera == true)
         {
             tempo += Time.deltaTime;
+
             if (tempo >= tempoespera)
             {
-
                 SceneManager.LoadScene("Sala_Principal");
+                espera = false;
             }
 
         }

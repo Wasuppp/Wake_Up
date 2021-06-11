@@ -26,6 +26,8 @@ TagManager:
   - CheckPoint4
   - plane
   - Nulo
+  - Codigo1
+  - Codigo2
   layers:
   - Default
   - TransparentFX
@@ -42,8 +44,8 @@ TagManager:
   - Objeto-Escala-5
   - Objeto1
   - Objeto2
-  - 
-  - 
+  - Codigo1
+  - Codigo2
   - 
   - 
   - 

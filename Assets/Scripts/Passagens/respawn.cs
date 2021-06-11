@@ -38,24 +38,6 @@ public class respawn : MonoBehaviour
             RespawnJogador = true;
         }
 
-        if (other.CompareTag("CheckPoint1"))
-        {
-            LocalDeCheckpoint = CheckPoint1.transform.position;
-            OrientacaoDeChekpoint = CheckPoint1.transform.rotation;
-            Debug.Log("checkpoint sala1");
-
-        } else if (other.CompareTag("CheckPoint2"))
-        {
-            LocalDeCheckpoint = CheckPoint2.transform.position;
-            OrientacaoDeChekpoint = CheckPoint2.transform.rotation;
-            Debug.Log("checkpoint sala2");
-
-        }
-        else if (other.CompareTag("CheckPoint3"))
-        {
-            LocalDeCheckpoint = CheckPoint3.transform.position;
-            OrientacaoDeChekpoint = CheckPoint3.transform.rotation;
-        }
     }
 
     private void Update()
@@ -66,21 +48,4 @@ public class respawn : MonoBehaviour
         }
     }
 
-    /*
-    public IEnumerator Transporta() 
-    {
-        if (RespawnJogador == true)
-        {
-            Jogador.GetComponent<Plataforma>().enabled = false;
-
-            gameObject.transform.position = LocalDeCheckpoint;
-            gameObject.transform.rotation = OrientacaoDeChekpoint;
-            RespawnJogador = false;
-
-            yield return new WaitForSeconds(0.1f);
-
-            Jogador.GetComponent<>().enabled = true;
-        }
-    }
-    */
 }

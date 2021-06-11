@@ -23,6 +23,7 @@ public class TeleCena : MonoBehaviour
             {
 
                 SceneManager.LoadScene("Sala_Principal");
+                espera = false;
             }
 
         }

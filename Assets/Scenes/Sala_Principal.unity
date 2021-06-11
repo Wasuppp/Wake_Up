@@ -584,6 +584,9 @@ MonoBehaviour:
     type: 3}
   PosCuboFinal: {fileID: 8784469468000426247, guid: fdfcacbc9a2db58429a24eb79d7a1a27,
     type: 3}
+  FogoParticulas: {fileID: 6529238274035090682, guid: 9e5191087373d8a4392e625c0967c183,
+    type: 3}
+  PosFogo: {fileID: 3475603236396618031, guid: 0e3ae803439dad840af3a45c8c18c64b, type: 3}
   PortalPass: {fileID: 828094944}
   PortalMin: {fileID: 43587143}
   PortalLab: {fileID: 1139892723}

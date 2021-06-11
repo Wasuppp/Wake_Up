@@ -6,6 +6,8 @@ public class PersistentManagerScript : MonoBehaviour
 {
     [SerializeField] GameObject CuboFinal;
     [SerializeField] GameObject PosCuboFinal;
+    [SerializeField] GameObject FogoParticulas;
+    [SerializeField] GameObject PosFogo;
 
     [SerializeField] GameObject PortalPass;
     [SerializeField] GameObject PortalMin;
@@ -106,6 +108,7 @@ public class PersistentManagerScript : MonoBehaviour
         {
             Debug.Log("Cubo-Final");
             Instantiate(CuboFinal, PosCuboFinal.transform.position, PosCuboFinal.transform.rotation);
+            Instantiate(FogoParticulas, PosFogo.transform.position, PosFogo.transform.rotation);
             CuboFinalInstanciado = true;
         }
     }

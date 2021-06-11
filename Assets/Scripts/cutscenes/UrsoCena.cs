@@ -25,8 +25,8 @@ public class UrsoCena : MonoBehaviour
             tempo += Time.deltaTime;
             if(tempo >= tempoespera)
             {
-
                 SceneManager.LoadScene("Sala_Principal");
+                espera = false;
             }
 
         }
