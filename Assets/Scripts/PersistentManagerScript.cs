@@ -36,6 +36,7 @@ public class PersistentManagerScript : MonoBehaviour
     [SerializeField] Light Luz3;
     [SerializeField] Transform PosLuz3;
 
+    bool Desativatransicao = false;
     bool UltimaCena = false;
     bool ContarTempo = false;
     float tempo = 0f;
@@ -135,9 +136,10 @@ public class PersistentManagerScript : MonoBehaviour
         {
             tempo += Time.deltaTime;
 
-            if (tempo >= Tempotranporte)
+            if (tempo >= Tempotranporte && Desativatransicao == false)
             {
                 SceneManager.LoadScene("CutsceneFinal");
+                Desativatransicao = true;
             }
         }
     }

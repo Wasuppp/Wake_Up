@@ -736,7 +736,7 @@ MonoBehaviour:
     type: 3}
   Luz3: {fileID: 5924287263845942837, guid: e7c0920cfad977049916721898a1d670, type: 3}
   PosLuz3: {fileID: 8557902645178840110, guid: 06858a757772fa94c8cbdd30510c27d6, type: 3}
-  Tempotranporte: 0
+  Tempotranporte: 4
   TerminouPass: 0
   TerminouLab: 0
   TerminouMin: 0
@@ -2792,7 +2792,7 @@ PrefabInstance:
     - target: {fileID: 8350646145992537050, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.44
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8350646145992537050, guid: 3d84cf747dc4f404dbbbdaedf7973c8b,
         type: 3}
