@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PersistentManagerScript : MonoBehaviour
 {
-
-
-    [SerializeField] FinalCubo FinalCubo;
     [SerializeField] GameObject CuboFinal;
     [SerializeField] GameObject PosCuboFinal;
     [SerializeField] GameObject FogoParticulas;
@@ -37,6 +35,12 @@ public class PersistentManagerScript : MonoBehaviour
     [SerializeField] GameObject PosTelemovel;
     [SerializeField] Light Luz3;
     [SerializeField] Transform PosLuz3;
+
+    bool UltimaCena = false;
+    bool ContarTempo = false;
+    float tempo = 0f;
+    [SerializeField] float Tempotranporte;
+
 
     public static PersistentManagerScript Instance { get; private set; }
 
@@ -109,13 +113,32 @@ public class PersistentManagerScript : MonoBehaviour
 
         if (PortalLabDesativado == true && PortalPassDesativado == true && PortalMinDesativado == true && CuboFinalInstanciado == false)
         {
-            Debug.Log("Cubo-Final");
-            FinalCubo.triggercena();
             Instantiate(CuboFinal, PosCuboFinal.transform.position, PosCuboFinal.transform.rotation);
             Instantiate(FogoParticulas, PosFogo.transform.position, PosFogo.transform.rotation);
             CuboFinalInstanciado = true;
+            UltimaCena = true;
+        }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && UltimaCena == true)
+        {
+            ContarTempo = true;
+        }
 
+    }
+
+    void Update()
+    {
+        if (ContarTempo == true)
+        {
+            tempo += Time.deltaTime;
+
+            if (tempo >= Tempotranporte)
+            {
+                SceneManager.LoadScene("CutsceneFinal");
+            }
         }
     }
 }

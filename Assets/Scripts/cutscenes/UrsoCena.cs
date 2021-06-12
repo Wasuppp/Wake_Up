@@ -23,7 +23,7 @@ public class UrsoCena : MonoBehaviour
         if(espera== true)
         {
             tempo += Time.deltaTime;
-            if(tempo >= tempoespera)
+            if(tempo >= tempoespera || Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene("Sala_Principal");
                 espera = false;

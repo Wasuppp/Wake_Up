@@ -7,6 +7,9 @@ public class ControladorCodigo : MonoBehaviour
     [SerializeField] int NumeroCerto1;
     [SerializeField] int NumeroCerto2;
 
+    [SerializeField] Combinacao1 Combinacao1;
+    [SerializeField] Combinacao2 Combinacao2;
+
     [SerializeField] Porta Porta;
 
     bool AbrirPorta = false;
@@ -20,6 +23,7 @@ public class ControladorCodigo : MonoBehaviour
         {
             Codigo1Certo = true;
             Debug.Log("Numero 1 certo");
+            Combinacao1.DesativaCodigo1();
         }
         else
         {
@@ -33,6 +37,7 @@ public class ControladorCodigo : MonoBehaviour
         {
             Codigo2Certo = true;
             Debug.Log("Numero 2 certo");
+            Combinacao2.DesativaCodigo2();
         }
         else
         {

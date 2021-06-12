@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutscenePaper.unity
     guid: 2d19518df289b384081dd0af09a00f99
+  - enabled: 1
+    path: Assets/Scenes/CutsceneFinal.unity
+    guid: dafa9fc77f1a19d4489d70b23809f311
   m_configObjects: {}

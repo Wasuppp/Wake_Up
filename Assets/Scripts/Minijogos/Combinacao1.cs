@@ -11,6 +11,8 @@ public class Combinacao1 : MonoBehaviour
 
     [SerializeField] ControladorCodigo ControladorCodigo;
 
+    bool desativa1 = false;
+
     bool EmRotacao = false;
 
     float Contador = 60f;
@@ -18,13 +20,19 @@ public class Combinacao1 : MonoBehaviour
 
     bool Reset = false;
 
+
+    public void DesativaCodigo1()
+    {
+        desativa1 = true;
+    }
+
     private void FixedUpdate()
     {
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 20, ImagemInteracao)) // Se a direção da camara do jogador estiver sobre o objeto-escala
         {
-            if (Input.GetKeyDown(KeyCode.E) && EmRotacao == false) //se o jogador pressionar a tecla "E" e a sala estiver parada
+            if (Input.GetKeyDown(KeyCode.E) && EmRotacao == false && desativa1 == false) //se o jogador pressionar a tecla "E" e a sala estiver parada
             {
                 EmRotacao = true; // a sala roda
                 ControladorCodigo.NumeroCodigo1(NumeroRotacao1);

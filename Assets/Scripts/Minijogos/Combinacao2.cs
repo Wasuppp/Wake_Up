@@ -12,10 +12,17 @@ public class Combinacao2 : MonoBehaviour
 
     [SerializeField] ControladorCodigo ControladorCodigo;
 
+    bool desativa2 = false;
+
     float Contador = 60f;
     int NumeroRotacao2 = 1;
 
     bool Reset = false;
+
+    public void DesativaCodigo2()
+    {
+        desativa2 = true;
+    }
 
     private void FixedUpdate()
     {
@@ -23,7 +30,7 @@ public class Combinacao2 : MonoBehaviour
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 20, ImagemInteracao)) // Se a direção da camara do jogador estiver sobre o objeto-escala
         {
-            if (Input.GetKeyDown(KeyCode.E) && EmRotacao == false) //se o jogador pressionar a tecla "E" e a sala estiver parada
+            if (Input.GetKeyDown(KeyCode.E) && EmRotacao == false && desativa2 == false) //se o jogador pressionar a tecla "E" e a sala estiver parada
             {
                 EmRotacao = true; // a sala roda
                 ControladorCodigo.NumeroCodigo2(NumeroRotacao2);
