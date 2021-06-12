@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PersistentManagerScript : MonoBehaviour
 {
+
+
+    [SerializeField] FinalCubo FinalCubo;
     [SerializeField] GameObject CuboFinal;
     [SerializeField] GameObject PosCuboFinal;
     [SerializeField] GameObject FogoParticulas;
@@ -107,6 +110,7 @@ public class PersistentManagerScript : MonoBehaviour
         if (PortalLabDesativado == true && PortalPassDesativado == true && PortalMinDesativado == true && CuboFinalInstanciado == false)
         {
             Debug.Log("Cubo-Final");
+            FinalCubo.triggercena();
             Instantiate(CuboFinal, PosCuboFinal.transform.position, PosCuboFinal.transform.rotation);
             Instantiate(FogoParticulas, PosFogo.transform.position, PosFogo.transform.rotation);
             CuboFinalInstanciado = true;

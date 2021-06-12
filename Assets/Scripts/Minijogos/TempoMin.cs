@@ -26,7 +26,7 @@ public class TempoMin : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Cubo_Labirinto");
+            SceneManager.LoadScene("MiniJogos");
         }
 
     }
