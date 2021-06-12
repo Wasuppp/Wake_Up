@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CenaFinal : MonoBehaviour
 {
     float tempo = 0f;
-    [SerializeField] float tempoespera = 120f;
+    [SerializeField] float tempoespera = 64f;
     bool espera = false;
 
     // Start is called before the first frame update
