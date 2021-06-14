@@ -5,7 +5,7 @@ using UnityEngine;
 public class Porta : MonoBehaviour
 {
     Animator AnimacaoPlataforma;
-    AudioSource PortaSom;
+    AudioSource SomPorta;
 
     float Tempo = 0f;
 
@@ -14,14 +14,15 @@ public class Porta : MonoBehaviour
     private void Start()
     {
         AnimacaoPlataforma = GetComponent<Animator>();
-        PortaSom = GetComponent<AudioSource>();
+        SomPorta = GetComponent<AudioSource>();
     }
 
     public void AnimacaoPorta()
     {
+        
         AnimacaoPlataforma.SetBool("Ativar", true);
         AnimarPorta = true;
-        escadasSom();
+        PSom();
     }
 
     private void Update()
@@ -38,8 +39,9 @@ public class Porta : MonoBehaviour
         }
     }
 
-    void escadasSom()
+    void PSom()
     {
-        PortaSom.Play();
+        SomPorta.Play();
+        Debug.Log("Atocar");
     }
 }

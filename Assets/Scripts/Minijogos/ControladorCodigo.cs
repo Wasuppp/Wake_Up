@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControladorCodigo : MonoBehaviour
 {
+    
     [SerializeField] int NumeroCerto1;
     [SerializeField] int NumeroCerto2;
 
@@ -50,8 +51,8 @@ public class ControladorCodigo : MonoBehaviour
         if (Codigo1Certo == true && Codigo2Certo == true)
         {
             Debug.Log("AbrirPorta");
+
             Porta.AnimacaoPorta();
         }
     }
-
 }

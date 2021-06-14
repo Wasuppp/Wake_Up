@@ -6,12 +6,21 @@ using UnityEngine.SceneManagement;
 public class mainmenu : MonoBehaviour
 {
     [SerializeField] float Delay = 2f;
-    
-    float Tempo = 0f;
+
+    float TempoJogador = 0f;
+    float TempoCreditos = 0f;
+    float TempoSair = 0f;
 
     bool MudarSalaPrincipal = false;
     bool MudarMenu = false;
     bool SairJogo = false;
+
+    private void Awake()
+    {
+        TempoJogador = 0f;
+        TempoCreditos = 0f;
+        TempoSair = 0f;
+    }
 
     public void StartGame()
     {
@@ -33,31 +42,30 @@ public class mainmenu : MonoBehaviour
     {
         if (MudarSalaPrincipal == true)
         {
-            Tempo += Time.deltaTime;
-            if (Tempo >= Delay)
+            TempoJogador += Time.deltaTime;
+            if (TempoJogador >= Delay)
             {
-                SalaPrincipal();
+                SceneManager.LoadScene("Sala_Principal");
                 MudarSalaPrincipal = false;
             }
 
         } else if (MudarMenu == true)
         {
-            Tempo += Time.deltaTime;
-            if (Tempo >= Delay)
+            TempoCreditos += Time.deltaTime;
+            if (TempoCreditos >= Delay)
             {
-                Menu();
+                SceneManager.LoadScene("Creditos");
                 MudarMenu = false;
             }
 
         } else if (SairJogo == true)
         {
-            Tempo += Time.deltaTime;
-            if (Tempo >= Delay)
+            TempoSair += Time.deltaTime;
+            if (TempoSair >= Delay)
             {
                 ExitGame();
                 SairJogo = false;
             }
-
         }
     }
 
@@ -66,7 +74,7 @@ public class mainmenu : MonoBehaviour
         SceneManager.LoadScene("Sala_Principal"); // muda a cena para a sala principal
     }
 
-    public void Menu()
+    public void MenuCreditos()
     {
         SceneManager.LoadScene("Creditos"); // muda a cena para creditos
     }

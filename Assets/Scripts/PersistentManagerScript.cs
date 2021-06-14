@@ -127,7 +127,6 @@ public class PersistentManagerScript : MonoBehaviour
         {
             ContarTempo = true;
         }
-
     }
 
     void Update()

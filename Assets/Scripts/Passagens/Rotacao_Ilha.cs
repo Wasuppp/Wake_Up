@@ -76,6 +76,7 @@ public class Rotacao_Ilha : MonoBehaviour
 
     }
 
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && EntrouemParent == false)
@@ -92,6 +93,7 @@ public class Rotacao_Ilha : MonoBehaviour
             other.transform.parent = null; //Jogador passa para filho da sala        
         }
     }
+    */
 
     void playsound()
     {

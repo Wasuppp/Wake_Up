@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 704735118}
   - component: {fileID: 704735117}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000027493312, y: -0.000015258789}
   m_SizeDelta: {x: 260, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &704735117
@@ -489,7 +489,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 964078011}
+      - m_Target: {fileID: 0}
         m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 916655296}
   - component: {fileID: 916655295}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Sair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 964078011}
+      - m_Target: {fileID: 0}
         m_MethodName: SairDoJogo
         m_Mode: 1
         m_Arguments:
@@ -850,7 +850,6 @@ GameObject:
   - component: {fileID: 919851834}
   - component: {fileID: 919851835}
   - component: {fileID: 919851833}
-  - component: {fileID: 919851836}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -947,18 +946,6 @@ VideoPlayer:
   m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
---- !u!114 &919851836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919851831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd89791a0e5b7348b767108a91cbe79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &964078006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,10 +1057,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 964078006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dae975392ad4524ba6f4061ebf6e057, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a682391ec949c247903dcf73968199b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Delay: 0.5
+  DelayMenu: 0.5
+  DelaySair: 0.5
 --- !u!1 &971394178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1366,7 @@ GameObject:
   - component: {fileID: 1387860040}
   - component: {fileID: 1387860041}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Continuar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1447,7 +1435,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 964078011}
+      - m_Target: {fileID: 0}
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
